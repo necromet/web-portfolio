@@ -2,19 +2,19 @@
 .about-page {
   padding-top: 80px;
   min-height: 100vh;
-  background: white;
+  background: var(--card-bg);
 }
 
 .about-hero {
   padding: 4rem 2rem;
   text-align: center;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
 }
 
 /* Bio Section */
 .bio-section {
   padding: 5rem 2rem;
-  background: white;
+  background: var(--card-bg);
 }
 
 .bio-container {
@@ -34,7 +34,7 @@
 .image-placeholder {
   width: 100%;
   aspect-ratio: 1;
-  background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -53,14 +53,14 @@
 .section-heading {
   font-size: 2rem;
   font-weight: 700;
-  color: #1a1a1a;
+  color: var(--text-primary);
   margin-bottom: 2rem;
   letter-spacing: -0.5px;
 }
 
 .bio-text {
   font-size: 1.1rem;
-  color: #666;
+  color: var(--text-secondary);
   line-height: 1.8;
   margin-bottom: 1.5rem;
 }
@@ -68,7 +68,7 @@
 /* Skills Section */
 .skills-section {
   padding: 5rem 2rem;
-  background: #f8f9fa;
+  background: var(--bg-secondary);
 }
 
 .skills-container {
@@ -79,10 +79,10 @@
 }
 
 .skill-category {
-  background: white;
+  background: var(--card-bg);
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px var(--shadow-color);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -94,7 +94,7 @@
 .skill-category-title {
   font-size: 1.3rem;
   font-weight: 600;
-  color: #4a90e2;
+  color: var(--primary-color);
   margin-bottom: 1.5rem;
 }
 
@@ -107,7 +107,7 @@
 .skill-tag {
   display: inline-block;
   padding: 0.5rem 1rem;
-  background: #e9ecef;
+  background: var(--bg-tertiary);
   color: #495057;
   border-radius: 8px;
   font-size: 0.95rem;
@@ -116,15 +116,15 @@
 }
 
 .skill-tag:hover {
-  background: #4a90e2;
-  color: white;
+  background: var(--primary-color);
+  color: #ffffff;
   transform: translateY(-2px);
 }
 
 /* Experience Section */
 .experience-section {
   padding: 5rem 2rem;
-  background: white;
+  background: var(--card-bg);
 }
 
 .timeline {
@@ -141,7 +141,7 @@
   top: 0;
   bottom: 0;
   width: 2px;
-  background: #e9ecef;
+  background: var(--bg-tertiary);
 }
 
 .timeline-item {
@@ -165,13 +165,13 @@
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: #4a90e2;
+  background: var(--primary-color);
   border: 4px solid white;
-  box-shadow: 0 0 0 2px #4a90e2;
+  box-shadow: 0 0 0 2px var(--primary-color);
 }
 
 .timeline-content {
-  background: #f8f9fa;
+  background: var(--bg-secondary);
   padding: 2rem;
   border-radius: 12px;
   margin-left: 1rem;
@@ -179,7 +179,7 @@
 }
 
 .timeline-content:hover {
-  background: white;
+  background: var(--card-bg);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   transform: translateX(5px);
 }
@@ -187,7 +187,7 @@
 .job-role {
   font-size: 1.4rem;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
 
@@ -200,16 +200,16 @@
 }
 
 .job-company {
-  color: #4a90e2;
+  color: var(--primary-color);
   font-weight: 600;
 }
 
 .job-period {
-  color: #666;
+  color: var(--text-secondary);
 }
 
 .job-description {
-  color: #666;
+  color: var(--text-secondary);
   line-height: 1.7;
 }
 
@@ -281,3 +281,5 @@
     gap: 0.25rem;
   }
 }
+/* Dark mode transitions */
+.about-page, .about-hero, .bio-section, .skill-category, .timeline-content { transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; }

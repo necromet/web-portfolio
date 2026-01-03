@@ -3,6 +3,8 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: var(--bg-primary);
+  transition: background-color 0.3s ease;
 }
 
 .main-content {
@@ -11,11 +13,13 @@
 
 /* Footer */
 .footer {
-  background: #1a1a1a;
-  color: #fff;
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
   padding: 2rem;
   text-align: center;
   margin-top: auto;
+  border-top: 1px solid var(--border-color);
+  transition: all 0.3s ease;
 }
 
 .footer-content {
@@ -25,12 +29,13 @@
 
 .footer-content p {
   margin: 0.5rem 0;
-  color: #ccc;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
 }
 
 .footer-tagline {
   font-size: 0.9rem;
-  color: #888;
+  color: var(--text-light);
 }
 
 /* Smooth scroll behavior */
@@ -40,6 +45,6 @@ html {
 
 /* Accessibility - Focus styles */
 *:focus-visible {
-  outline: 2px solid #4a90e2;
+  outline: 2px solid var(--primary-color);
   outline-offset: 2px;
 }

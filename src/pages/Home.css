@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: center;
   padding: 4rem 2rem;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
 }
 
 .hero-content {
@@ -22,27 +22,27 @@
 .hero-title {
   font-size: 3.5rem;
   font-weight: 700;
-  color: #1a1a1a;
+  color: var(--text-primary);
   margin-bottom: 1rem;
   line-height: 1.2;
   letter-spacing: -1px;
 }
 
 .highlight {
-  color: #4a90e2;
+  color: var(--primary-color);
   position: relative;
 }
 
 .hero-subtitle {
   font-size: 1.5rem;
-  color: #666;
+  color: var(--text-secondary);
   font-weight: 500;
   margin-bottom: 1.5rem;
 }
 
 .hero-description {
   font-size: 1.1rem;
-  color: #666;
+  color: var(--text-secondary);
   line-height: 1.8;
   margin-bottom: 2.5rem;
   max-width: 600px;
@@ -70,27 +70,27 @@
 }
 
 .btn-primary {
-  background: #4a90e2;
-  color: white;
-  border-color: #4a90e2;
+  background: var(--primary-color);
+  color: #ffffff;
+  border-color: var(--primary-color);
 }
 
 .btn-primary:hover {
-  background: #357abd;
-  border-color: #357abd;
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
 }
 
 .btn-secondary {
   background: transparent;
-  color: #4a90e2;
-  border-color: #4a90e2;
+  color: var(--primary-color);
+  border-color: var(--primary-color);
 }
 
 .btn-secondary:hover {
-  background: #4a90e2;
-  color: white;
+  background: var(--primary-color);
+  color: #ffffff;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(74, 144, 226, 0.2);
 }
@@ -98,7 +98,7 @@
 /* Stats Section */
 .stats {
   padding: 4rem 2rem;
-  background: white;
+  background: var(--card-bg);
 }
 
 .stats-grid {
@@ -113,7 +113,7 @@
   text-align: center;
   padding: 2rem;
   border-radius: 12px;
-  background: #f8f9fa;
+  background: var(--bg-secondary);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -125,26 +125,26 @@
 .stat-number {
   font-size: 3rem;
   font-weight: 700;
-  color: #4a90e2;
+  color: var(--primary-color);
   margin-bottom: 0.5rem;
 }
 
 .stat-label {
   font-size: 1rem;
-  color: #666;
+  color: var(--text-secondary);
   font-weight: 500;
 }
 
 /* Skills Preview Section */
 .skills-preview {
   padding: 5rem 2rem;
-  background: white;
+  background: var(--card-bg);
 }
 
 .section-title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #1a1a1a;
+  color: var(--text-primary);
   text-align: center;
   margin-bottom: 3rem;
   letter-spacing: -0.5px;
@@ -162,14 +162,14 @@
   padding: 2.5rem 2rem;
   text-align: center;
   border-radius: 12px;
-  background: #f8f9fa;
+  background: var(--bg-secondary);
   transition: all 0.3s ease;
 }
 
 .skill-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  background: white;
+  background: var(--card-bg);
 }
 
 .skill-icon {
@@ -180,13 +180,13 @@
 
 .skill-item h3 {
   font-size: 1.3rem;
-  color: #1a1a1a;
+  color: var(--text-primary);
   margin-bottom: 0.75rem;
   font-weight: 600;
 }
 
 .skill-item p {
-  color: #666;
+  color: var(--text-secondary);
   font-size: 1rem;
   line-height: 1.6;
 }
@@ -244,3 +244,5 @@
     width: 100%;
   }
 }
+/* Add transitions for dark mode */
+.hero, .stats, .stat-card, .skills-preview, .skill-item { transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; }

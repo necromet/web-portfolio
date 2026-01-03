@@ -1,7 +1,7 @@
 /* Global Styles and CSS Reset */
 
 :root {
-  /* Color Palette */
+  /* Light Mode Colors */
   --primary-color: #4a90e2;
   --primary-dark: #357abd;
   --text-primary: #1a1a1a;
@@ -11,12 +11,16 @@
   --bg-secondary: #f8f9fa;
   --bg-tertiary: #e9ecef;
   --border-color: #e9ecef;
+  --shadow-color: rgba(0, 0, 0, 0.08);
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --nav-bg: rgba(255, 255, 255, 0.95);
+  --card-bg: #ffffff;
+  --hover-bg: #f8f9fa;
   
   /* Typography */
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: Jetbrains Mono, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   line-height: 1.6;
@@ -27,6 +31,26 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Dark Mode Colors */
+[data-theme='dark'] {
+  --primary-color: #5ba3ff;
+  --primary-dark: #4a90e2;
+  --text-primary: #e9ecef;
+  --text-secondary: #adb5bd;
+  --text-light: #868e96;
+  --bg-primary: #0f1419;
+  --bg-secondary: #1a1f26;
+  --bg-tertiary: #252b33;
+  --border-color: #2d3339;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --nav-bg: rgba(15, 20, 25, 0.95);
+  --card-bg: #1a1f26;
+  --hover-bg: #252b33;
 }
 
 /* CSS Reset */
@@ -44,6 +68,7 @@ body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Typography Defaults */
@@ -52,11 +77,14 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   line-height: 1.2;
   color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 p {
   margin: 0;
   line-height: 1.6;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
 }
 
 a {

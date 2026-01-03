@@ -2,14 +2,14 @@
 .contact-page {
   padding-top: 80px;
   min-height: 100vh;
-  background: #f8f9fa;
+  background: var(--bg-secondary);
 }
 
 .contact-hero {
   padding: 4rem 2rem;
   text-align: center;
-  background: white;
-  border-bottom: 1px solid #e9ecef;
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--bg-tertiary);
 }
 
 /* Contact Content */
@@ -28,10 +28,10 @@
 
 /* Contact Form */
 .contact-form-wrapper {
-  background: white;
+  background: var(--card-bg);
   padding: 3rem;
   border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 16px var(--shadow-color);
   animation: fadeInUp 0.6s ease-out;
 }
 
@@ -48,7 +48,7 @@
 
 .form-label {
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--text-primary);
   margin-bottom: 0.5rem;
   font-size: 0.95rem;
 }
@@ -60,19 +60,19 @@
 .form-input,
 .form-textarea {
   padding: 0.875rem 1rem;
-  border: 2px solid #e9ecef;
+  border: 2px solid var(--bg-tertiary);
   border-radius: 8px;
   font-size: 1rem;
   font-family: inherit;
   transition: all 0.3s ease;
-  background: #f8f9fa;
+  background: var(--bg-secondary);
 }
 
 .form-input:focus,
 .form-textarea:focus {
   outline: none;
-  border-color: #4a90e2;
-  background: white;
+  border-color: var(--primary-color);
+  background: var(--card-bg);
   box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
 }
 
@@ -83,8 +83,8 @@
 
 .submit-button {
   padding: 1rem 2rem;
-  background: #4a90e2;
-  color: white;
+  background: var(--primary-color);
+  color: #ffffff;
   border: none;
   border-radius: 8px;
   font-size: 1rem;
@@ -95,7 +95,7 @@
 }
 
 .submit-button:hover {
-  background: #357abd;
+  background: var(--primary-dark);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
 }
@@ -124,7 +124,7 @@
 }
 
 .contact-text {
-  color: #666;
+  color: var(--text-secondary);
   line-height: 1.8;
   margin-bottom: 2rem;
   font-size: 1.05rem;
@@ -143,19 +143,19 @@
   align-items: center;
   gap: 1rem;
   padding: 1.25rem;
-  background: white;
+  background: var(--card-bg);
   border-radius: 12px;
   text-decoration: none;
-  color: #1a1a1a;
+  color: var(--text-primary);
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px var(--shadow-color);
 }
 
 .social-link:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-  background: #4a90e2;
-  color: white;
+  background: var(--primary-color);
+  color: #ffffff;
 }
 
 .social-icon {
@@ -169,15 +169,15 @@
 
 /* Quick Info */
 .quick-info {
-  background: white;
+  background: var(--card-bg);
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px var(--shadow-color);
 }
 
 .info-item {
   padding: 1.5rem 0;
-  border-bottom: 1px solid #e9ecef;
+  border-bottom: 1px solid var(--bg-tertiary);
 }
 
 .info-item:last-child {
@@ -192,7 +192,7 @@
 .info-title {
   font-size: 0.9rem;
   font-weight: 600;
-  color: #4a90e2;
+  color: var(--primary-color);
   margin-bottom: 0.5rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -200,7 +200,7 @@
 
 .info-text {
   font-size: 1.1rem;
-  color: #1a1a1a;
+  color: var(--text-primary);
   font-weight: 500;
 }
 
@@ -263,3 +263,5 @@
     font-size: 0.95rem;
   }
 }
+/* Dark mode transitions */
+.contact-page, .contact-hero, .contact-form-wrapper, .social-link, .quick-info, .form-input, .form-textarea { transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; }
