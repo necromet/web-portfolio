@@ -1,10 +1,6 @@
 import { useTheme } from '../context/ThemeContext';
 import './ThemeToggle.css';
 
-/**
- * Theme Toggle Component
- * Button to switch between light and dark modes
- */
 function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
 

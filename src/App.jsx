@@ -7,10 +7,6 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import './App.css';
 
-/**
- * Main App Component
- * Handles routing and overall layout structure
- */
 function App() {
   return (
     <ThemeProvider>

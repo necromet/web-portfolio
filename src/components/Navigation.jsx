@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import ThemeToggle from './ThemeToggle';
+import MediaNavigator from './MediaNavigation';
 import './Navigation.css';
 
 /**
@@ -14,7 +15,7 @@ function Navigation() {
     <nav className="navigation">
       <div className="nav-container">
         <Link to="/" className="nav-logo">
-          Portfolio
+          ER Portfolio
         </Link>
         
         <div className="nav-right">
@@ -52,6 +53,7 @@ function Navigation() {
               </Link>
             </li>
           </ul>
+          <MediaNavigator />
           <ThemeToggle />
         </div>
       </div>

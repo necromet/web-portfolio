@@ -2,8 +2,8 @@
 
 :root {
   /* Light Mode Colors */
-  --primary-color: #4a90e2;
-  --primary-dark: #357abd;
+  --primary-color: #745cec;
+  --primary-dark: #6246ea;
   --text-primary: #1a1a1a;
   --text-secondary: #666;
   --text-light: #888;
@@ -35,8 +35,8 @@
 
 /* Dark Mode Colors */
 [data-theme='dark'] {
-  --primary-color: #5ba3ff;
-  --primary-dark: #4a90e2;
+  --primary-color: #695bff;
+  --primary-dark: #6246ea;
   --text-primary: #e9ecef;
   --text-secondary: #adb5bd;
   --text-light: #868e96;
@@ -72,6 +72,8 @@ body {
 }
 
 /* Typography Defaults */
+
+
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   font-weight: 600;

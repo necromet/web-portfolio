@@ -11,10 +11,10 @@ function Home() {
       <section className="hero">
         <div className="hero-content">
           <h1 className="hero-title">
-            Hi, I'm <span className="highlight">Your Name</span>
+            Hi, I'm <span className="highlight">Edward</span>
           </h1>
           <p className="hero-subtitle">
-            Full-Stack Developer & Creative Problem Solver
+            Data Scientist, Analytics, & AI Enthusiast
           </p>
           <p className="hero-description">
             I build exceptional digital experiences that combine clean code 
@@ -36,11 +36,11 @@ function Home() {
       <section className="stats">
         <div className="stats-grid">
           <div className="stat-card">
-            <h3 className="stat-number">5+</h3>
+            <h3 className="stat-number">3+</h3>
             <p className="stat-label">Years Experience</p>
           </div>
           <div className="stat-card">
-            <h3 className="stat-number">50+</h3>
+            <h3 className="stat-number">15+</h3>
             <p className="stat-label">Projects Completed</p>
           </div>
           <div className="stat-card">

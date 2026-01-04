@@ -1,0 +1,43 @@
+.media-navigation-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.media-navigation {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  color: var(--text-color);
+}
+
+.media-navigation:hover {
+  background-color: var(--hover-bg, rgba(0, 0, 0, 0.1));
+  transform: scale(1.1);
+}
+
+.media-link {
+  text-decoration: none;
+}
+
+.media-icon svg {
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.media-link:hover .media-icon svg {
+  transform: rotate(360deg);
+}
+
+.theme-toggle-icon {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
