@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import TechTag from '../components/TechTag';
 import './Home.css';
 
 /**
@@ -42,10 +43,9 @@ function Home() {
             <p className="hero-description" align="left">
               Here are some technologies I've been working with recently:
             </p>
+            <TechTag className="tech-tag">Python</TechTag>
+            <TechTag className="tech-tag">SQL</TechTag>
             <div style={{ textAlign: 'left'}}>
-              <Link to="/contact" className="btn btn-secondary">
-                  Get in Touch
-              </Link>
             </div>
           </div>
           <div className="hero-image">

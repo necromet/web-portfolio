@@ -111,22 +111,6 @@
   margin-bottom: 1.5rem;
 }
 
-.tech-tag {
-  display: inline-block;
-  padding: 0.25rem 0.75rem;
-  background: var(--bg-tertiary);
-  color: #495057;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  transition: all 0.2s ease;
-}
-
-.tech-tag:hover {
-  background: var(--primary-color);
-  color: #ffffff;
-}
-
 /* Project Links */
 .project-links {
   display: flex;
