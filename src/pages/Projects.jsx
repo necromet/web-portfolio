@@ -1,4 +1,5 @@
 import './Projects.css';
+import TechTag from '../components/TechTag';
 
 /**
  * Projects Page Component
@@ -88,7 +89,7 @@ function Projects() {
               <p className="project-description">{project.description}</p>
               <div className="project-technologies">
                 {project.technologies.map((tech, index) => (
-                  <span key={index} className="tech-tag">{tech}</span>
+                  <TechTag key={index}>{tech}</TechTag>
                 ))}
               </div>
               <div className="project-links">

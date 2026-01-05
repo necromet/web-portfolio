@@ -1,0 +1,23 @@
+/* Technology Tag Styles */
+.tech-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.75rem;
+  background: var(--bg-tertiary);
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 20px;
+  transition: all 0.2s ease;
+  font-weight: 600;
+}
+
+.tech-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.tech-tag:hover {
+  background: var(--primary-color);
+  color: #ffffff;
+}
