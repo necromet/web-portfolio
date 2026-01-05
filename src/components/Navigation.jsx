@@ -21,12 +21,20 @@ function Navigation() {
         <div className="nav-right">
           <ul className="nav-menu">
             <li>
-              <Link 
-                to="/" 
-                className={location.pathname === '/' ? 'nav-link active' : 'nav-link'}
+              <a 
+                href="/#intro" 
+                className={location.hash === '#intro' ? 'nav-link active' : 'nav-link'}
               >
                 Home
-              </Link>
+              </a>
+            </li>
+            <li>
+              <a 
+                href="/#about" 
+                className={location.hash === '#about' ? 'nav-link active' : 'nav-link'}
+              >
+                About
+              </a>
             </li>
             <li>
               <Link 
@@ -34,14 +42,6 @@ function Navigation() {
                 className={location.pathname === '/projects' ? 'nav-link active' : 'nav-link'}
               >
                 Projects
-              </Link>
-            </li>
-            <li>
-              <Link 
-                to="/about" 
-                className={location.pathname === '/about' ? 'nav-link active' : 'nav-link'}
-              >
-                About
               </Link>
             </li>
             <li>

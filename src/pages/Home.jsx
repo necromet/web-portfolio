@@ -8,26 +8,48 @@ import './Home.css';
 function Home() {
   return (
     <div className="home">
-      <section className="hero">
-        <div className="hero-content">
-          <h1 className="hero-title">
-            Hi, I'm <span className="highlight">Edward</span>
-          </h1>
-          <p className="hero-subtitle">
-            Data Scientist, Analytics, & AI Enthusiast
-          </p>
-          <p className="hero-description">
-            I build exceptional digital experiences that combine clean code 
-            with thoughtful design. Specialized in modern web technologies 
-            and user-centered solutions.
-          </p>
-          <div className="hero-cta">
-            <Link to="/projects" className="btn btn-primary">
-              View My Work
-            </Link>
-            <Link to="/contact" className="btn btn-secondary">
-              Get in Touch
-            </Link>
+      <section id="intro" className="hero">
+        <div className="hero-container">
+          <div className="hero-image">
+            <img src="./src/assets/Hero Image ER.png" alt="AI Technology" />
+          </div>
+          <div className="hero-content">
+            <h1 className="hero-title-with-cursor" align="left">
+              hi, <span className="highlight">edward</span> here.
+            </h1>
+            <p className="hero-description" align="left">
+              I'm a data scientist and mathematician based in Indonesia. I'm fascinated by <span className="hero-description-bold">artificial intelligence</span> and its potential.
+            </p>
+            <div style={{ textAlign: 'left' }}>
+              <Link to="/contact" className="btn btn-secondary">
+                  Get in Touch
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section id="about" className="about">
+        <div className="hero-container">
+          
+          <div className="hero-content">
+            <h1 className="hero-title" align="left">
+              <span className="highlight">#</span> about me
+            </h1>
+            <p className="hero-description" align="left">
+              I am currently a <span className="hero-description-bold">Data Scientist</span> at <span className="highlight" style={{ fontWeight: 600 }}>Sinarmas Multiartha</span>, where I help companies within Sinarmas group that offer loan services by creating dashboards and reports. Outside of work, I enjoy exploring new technologies and enhancing my skills in Artificial Intelligence, specifically in <span className="hero-description-bold">Generative AI</span> and <span className="hero-description-bold">AI Agents</span>.
+            </p>
+            <p className="hero-description" align="left">
+              Here are some technologies I've been working with recently:
+            </p>
+            <div style={{ textAlign: 'left'}}>
+              <Link to="/contact" className="btn btn-secondary">
+                  Get in Touch
+              </Link>
+            </div>
+          </div>
+          <div className="hero-image">
+            <img src="./src/assets/Hero Image ER.png" alt="AI Technology" />
           </div>
         </div>
       </section>
