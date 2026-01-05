@@ -15,7 +15,7 @@ function Navigation() {
     <nav className="navigation">
       <div className="nav-container">
         <Link to="/" className="nav-logo">
-          ER Portfolio
+          Edward R
         </Link>
         
         <div className="nav-right">
@@ -53,9 +53,9 @@ function Navigation() {
               </Link>
             </li>
           </ul>
-          <MediaNavigator />
-          <ThemeToggle />
         </div>
+        <MediaNavigator />
+        <ThemeToggle />
       </div>
     </nav>
   );

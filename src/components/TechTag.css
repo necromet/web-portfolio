@@ -1,5 +1,6 @@
 /* Technology Tag Styles */
 .tech-tag {
+  margin-right: 0.5rem;
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
@@ -9,7 +10,8 @@
   border: 2px solid var(--primary-color);
   border-radius: 20px;
   transition: all 0.2s ease;
-  font-weight: 600;
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 
 .tech-icon {
