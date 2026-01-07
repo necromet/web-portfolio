@@ -10,7 +10,7 @@
   border: 2px solid var(--primary-color);
   border-radius: 20px;
   transition: all 0.2s ease;
-  font-size: 1.1rem;
+  font-size: 0.81vw;
   font-weight: 500;
 }
 

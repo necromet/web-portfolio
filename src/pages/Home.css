@@ -53,14 +53,14 @@
 }
 
 .hero-subtitle {
-  font-size: 1.5rem;
+  font-size: 1.3vw;
   color: var(--text-secondary);
   font-weight: 500;
   margin-bottom: 1.5rem;
 }
 
 .hero-description {
-  font-size: 1.5rem;
+  font-size: 1.3vw;
   color: var(--text-secondary);
   line-height: 1.8;
   margin-bottom: 2.5rem;
@@ -70,7 +70,7 @@
 }
 
 .hero-description-wo-margin {
-  font-size: 1.5rem;
+  font-size: 1.3vw;
   color: var(--text-secondary);
   line-height: 1.8;
   margin-bottom: 0.5rem;
@@ -80,7 +80,7 @@
 }
 
 .hero-description-bold {
-  font-size: 1.5rem;
+  font-size: 1.3vw;
   color: var(--text-secondary);
   line-height: 1.8;
   margin-bottom: 2.5rem;
