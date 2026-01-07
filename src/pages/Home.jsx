@@ -1,6 +1,6 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import TechTag from '../components/TechTag';
+import ExperienceSection from '../components/ExperienceSection';
 import './Home.css';
 
 /**
@@ -8,28 +8,6 @@ import './Home.css';
  * Hero section with professional introduction and call-to-action
  */
 function Home() {
-  const [activeCompany, setActiveCompany] = useState('Sinarmas Multiartha');
-
-  const experiences = {
-    'Sinarmas Multiartha': {
-      role: 'Data Scientist',
-      company: 'Sinarmas Multiartha',
-      date: 'JAN 2023 - PRESENT',
-      points: [
-        'Help companies within Sinarmas group that offer loan services by creating dashboards and reports',
-        'Build data pipelines and analytics solutions to drive business decisions'
-      ]
-    },
-    'Company B': {
-      role: 'Previous Role',
-      company: 'Company B',
-      date: '2021 - 2022',
-      points: ['Add your previous experience here']
-    }
-  };
-
-  const currentExp = experiences[activeCompany];
-
   return (
     <div className="home">
       <section id="intro" className="hero">
@@ -86,35 +64,7 @@ function Home() {
           <h1 className="hero-title" align="left">
             <span className="highlight">#</span> experience
           </h1>
-
-          <div className="experience-container">
-            {/* LEFT - Company List */}
-            <ul className="company-list">
-              {Object.keys(experiences).map((company) => (
-                <li
-                  key={company}
-                  className={activeCompany === company ? 'active' : ''}
-                  onClick={() => setActiveCompany(company)}
-                >
-                  {company.toUpperCase()}
-                </li>
-              ))}
-            </ul>
-
-            {/* RIGHT - Experience Details */}
-            <div className="experience-content">
-              <h3 className="exp-role">
-                {currentExp.role} <span className="exp-company">@ {currentExp.company}</span>
-              </h3>
-              <p className="exp-date">{currentExp.date}</p>
-
-              <ul className="exp-points">
-                {currentExp.points.map((text, i) => (
-                  <li key={i}>{text}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
+            <ExperienceSection />
         </div>
       </section>
 
