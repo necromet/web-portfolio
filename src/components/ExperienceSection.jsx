@@ -1,4 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const experiences = {
   'Sinarmas Multiartha': {
@@ -52,36 +56,106 @@ const defaultCompany = 'Sinarmas Multiartha';
 function ExperienceSection() {
   const [activeCompany, setActiveCompany] = useState(defaultCompany);
   const currentExp = experiences[activeCompany];
+  const contentRef = useRef(null);
+  const companyListRef = useRef(null);
+  const sectionRef = useRef(null);
+
+  // Scroll-triggered animation on mount
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Animate company list items when scrolled into view
+      gsap.fromTo('.company-list li', 
+        {
+          opacity: 0,
+          x: -30
+        },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.3,
+          stagger: 0.1,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 80%',
+            toggleActions: 'play none none none'
+          }
+        }
+      );
+
+      // Animate initial content when scrolled into view
+      gsap.from('.experience-content', {
+        opacity: 0,
+        y: 20,
+        duration: 0.6,
+        delay: 0.3,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top 80%',
+          toggleActions: 'play none none none'
+        }
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  // Animate content when company changes
+  useEffect(() => {
+    if (contentRef.current) {
+      gsap.fromTo(
+        contentRef.current,
+        {
+          opacity: 0,
+          y: 20
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          ease: 'power2.out'
+        }
+      );
+    }
+  }, [activeCompany]);
 
   return (
-    <div className="experience-container">
-      {/* LEFT - Company List */}
-      <ul className="company-list">
-        {Object.keys(experiences).map((company) => (
-          <li
-            key={company}
-            className={activeCompany === company ? 'active' : ''}
-            onClick={() => setActiveCompany(company)}
-          >
-            {company.toUpperCase()}
-          </li>
-        ))}
-      </ul>
+    <section id="experience" className="experience" ref={sectionRef}>
+      <div className="experience-wrapper">
+        <h1 className="hero-title" align="left">
+          <span className="highlight">#</span> experience
+        </h1>
+        <div className="experience-container" ref={companyListRef}>
+          {/* LEFT - Company List */}
+          <ul className="company-list">
+            {Object.keys(experiences).map((company) => (
+              <li
+                key={company}
+                className={activeCompany === company ? 'active' : ''}
+                onClick={() => setActiveCompany(company)}
+              >
+                {company.toUpperCase()}
+              </li>
+            ))}
+          </ul>
 
-      {/* RIGHT - Experience Details */}
-      <div className="experience-content">
-        <h3 className="exp-role">
-          {currentExp.role} <span className="exp-company">@ {currentExp.company}</span>
-        </h3>
-        <p className="exp-date">{currentExp.date}</p>
+          {/* RIGHT - Experience Details */}
+          <div className="experience-content" ref={contentRef}>
+            <h3 className="exp-role">
+              {currentExp.role} <span className="exp-company">@ {currentExp.company}</span>
+            </h3>
+            <p className="exp-date">{currentExp.date}</p>
 
-        <ul className="exp-points">
-          {currentExp.points.map((text, i) => (
-            <li key={i}>{text}</li>
-          ))}
-        </ul>
+            <ul className="exp-points">
+              {currentExp.points.map((text, i) => (
+                <li key={i}>{text}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 

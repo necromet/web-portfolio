@@ -10,9 +10,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 120px;
-  padding-left: 4rem 2rem;
-  padding-right: 4rem 2rem;
+  padding: 140px 4rem 4rem;
   /* background: var(--bg-tertiary); */
 }
 
@@ -25,7 +23,9 @@
 }
 
 .hero-image {
-  flex: 0 0 40rem;
+  flex: 0 0 auto;
+  max-width: 450px;
+  width: 100%;
   animation: fadeInLeft 0.8s ease-out;
 }
 
@@ -53,14 +53,14 @@
 }
 
 .hero-subtitle {
-  font-size: 1.3vw;
+  font-size: 1.25rem;
   color: var(--text-secondary);
   font-weight: 500;
   margin-bottom: 1.5rem;
 }
 
 .hero-description {
-  font-size: 1.3vw;
+  font-size: 1.125rem;
   color: var(--text-secondary);
   line-height: 1.8;
   margin-bottom: 2.5rem;
@@ -70,7 +70,7 @@
 }
 
 .hero-description-wo-margin {
-  font-size: 1.3vw;
+  font-size: 1.125rem;
   color: var(--text-secondary);
   line-height: 1.8;
   margin-bottom: 0.5rem;
@@ -80,14 +80,14 @@
 }
 
 .hero-description-bold {
-  font-size: 1.3vw;
+  font-size: 1.125rem;
   color: var(--text-secondary);
   line-height: 1.8;
   margin-bottom: 2.5rem;
-  max-width: 6600px;
+  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-  font-weight:500;
+  font-weight: 500;
 }
 
 .hero-cta {
@@ -113,7 +113,7 @@
 
 .hero-title-with-cursor::after {
   content: '|';
-  font-size:3.5rem;
+  font-size: 3.5rem;
   color: var(--primary-color);
   animation: blink 1s step-end infinite;
   margin-left: 0px;
@@ -137,10 +137,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 120px;
-  padding-left: 4rem 2rem;
-  padding-right: 4rem 2rem;
+  padding: 120px 4rem 4rem;
   /* background: var(--bg-tertiary); */
+}
+
+.tech-tags-container {
+  margin-bottom: 0.3rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 /* Experience Section */
@@ -397,26 +402,77 @@
   }
 }
 
+/* Tablet and Medium Screens */
+@media (max-width: 1024px) {
+  .hero {
+    padding: 100px 3rem 3rem;
+  }
+
+  .about {
+    padding: 100px 3rem 3rem;
+  }
+
+  .hero-container {
+    gap: 2.5rem;
+  }
+
+  .hero-image {
+    max-width: 350px;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-title-with-cursor {
+    font-size: 3rem;
+  }
+
+  .hero-title-with-cursor::after {
+    font-size: 3rem;
+  }
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
+  .hero {
+    padding: 80px 2rem 3rem;
+    min-height: auto;
+  }
+
+  .about {
+    padding: 80px 2rem 3rem;
+    min-height: auto;
+  }
+
   .hero-container {
     flex-direction: column;
     gap: 2rem;
   }
 
   .hero-image {
-    flex: 0 0 300px;
+    max-width: 300px;
   }
 
   .hero-title {
     font-size: 2.5rem;
   }
 
-  .hero-subtitle {
-    font-size: 1.25rem;
+  .hero-title-with-cursor {
+    font-size: 2.5rem;
   }
 
-  .hero-description {
+  .hero-title-with-cursor::after {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.125rem;
+  }
+
+  .hero-description,
+  .hero-description-wo-margin,
+  .hero-description-bold {
     font-size: 1rem;
   }
 
@@ -456,12 +512,44 @@
 }
 
 @media (max-width: 480px) {
+  .hero {
+    padding: 60px 1.5rem 2rem;
+  }
+
+  .about {
+    padding: 60px 1.5rem 2rem;
+  }
+
+  .hero-image {
+    flex: 0 0 auto;
+    padding-top: 50px;
+    max-width: 250px;
+    width: 100%;
+    animation: fadeInLeft 0.8s ease-out;
+  }
+
   .hero-title {
     font-size: 2rem;
   }
 
+  .hero-title-with-cursor {
+    font-size: 2rem;
+  }
+
+  .hero-title-with-cursor::after {
+    font-size: 2rem;
+  }
+
   .hero-subtitle {
-    font-size: 1.1rem;
+    font-size: 1rem;
+  }
+
+  .hero-description,
+  .hero-description-wo-margin,
+  .hero-description-bold {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
   }
 
   .hero-cta {
@@ -471,6 +559,56 @@
 
   .btn {
     width: 100%;
+    padding: 0.875rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .stat-label {
+    font-size: 0.9rem;
+  }
+
+  .stats {
+    padding: 3rem 1.5rem;
+  }
+
+  .skills-preview {
+    padding: 3rem 1.5rem;
+  }
+
+  .skill-item {
+    padding: 2rem 1.5rem;
+  }
+
+  .skill-icon {
+    font-size: 2.5rem;
+  }
+
+  .skill-item h3 {
+    font-size: 1.15rem;
+  }
+
+  .skill-item p {
+    font-size: 0.9rem;
+  }
+
+  .experience {
+    padding: 60px 1.5rem 3rem;
+  }
+
+  .exp-role {
+    font-size: 1.25rem;
+  }
+
+  .exp-points li {
+    font-size: 0.95rem;
   }
 }
 /* Add transitions for dark mode */

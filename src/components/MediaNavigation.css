@@ -42,3 +42,64 @@
   align-items: center;
   justify-content: center;
 }
+
+/* Tablet and Medium Screens */
+@media (max-width: 1024px) {
+  .media-navigation-container {
+    gap: 0.4rem;
+  }
+
+  .media-navigation {
+    padding: 0.45rem;
+  }
+
+  .theme-toggle-icon {
+    font-size: 1.15rem;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .media-navigation-container {
+    gap: 0.3rem;
+  }
+
+  .media-navigation {
+    padding: 0.4rem;
+  }
+
+  .theme-toggle-icon {
+    font-size: 1.1rem;
+  }
+
+  .media-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Small Mobile (iPhone and similar) */
+@media (max-width: 480px) {
+  .media-navigation-container {
+    gap: 0.25rem;
+  }
+
+  .media-navigation {
+    padding: 0.35rem;
+    border-radius: 6px;
+  }
+
+  .theme-toggle-icon {
+    font-size: 1rem;
+  }
+
+  .media-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* Disable hover transform on mobile for better touch experience */
+  .media-navigation:hover {
+    transform: scale(1.05);
+  }
+}

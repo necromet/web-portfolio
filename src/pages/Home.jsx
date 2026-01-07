@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import TechTag from '../components/TechTag';
 import ExperienceSection from '../components/ExperienceSection';
+import About from './About';
 import './Home.css';
 
 /**
@@ -30,43 +30,9 @@ function Home() {
           </div>
         </div>
       </section>
-      
-      <section id="about" className="about">
-        <div className="hero-container">
-          <div className="hero-content">
-            <h1 className="hero-title" align="left">
-              <span className="highlight">#</span> about me
-            </h1>
-            <p className="hero-description" align="left">
-              I am currently a <span className="hero-description-bold">Data Scientist</span> at <span className="highlight" style={{ fontWeight: 500 }}>Sinarmas Multiartha</span>, where I help companies within Sinarmas group that offer loan services by creating dashboards and reports. Outside of work, I enjoy exploring new technologies and enhancing my skills in Artificial Intelligence, specifically in <span className="hero-description-bold">Generative AI</span> and <span className="hero-description-bold">AI Agents</span>.
-            </p>
-            <p className="hero-description-wo-margin" align="left">
-              Here are some technologies and tools that I've been working with recently:
-            </p>
-            <TechTag className="tech-tag">Python</TechTag>
-            <TechTag className="tech-tag">PostgreSQL</TechTag>
-            <TechTag className="tech-tag">React.js</TechTag>
-            <TechTag className="tech-tag">Tableau</TechTag>
-            <TechTag className="tech-tag">Superset</TechTag>
-            <TechTag className="tech-tag">Langflow</TechTag>
-            <div style={{ textAlign: 'left'}}>
-            </div>
-          </div>
-          <div className="hero-image">
-            <img src="./src/assets/Hero Image ER.png" alt="AI Technology" />
-          </div>
-        </div>
-      </section>
-
+      <About />
       {/* Experience Section */}
-      <section id="experience" className="experience">
-        <div className="experience-wrapper">
-          <h1 className="hero-title" align="left">
-            <span className="highlight">#</span> experience
-          </h1>
-            <ExperienceSection />
-        </div>
-      </section>
+      <ExperienceSection />
 
       {/* Quick Stats Section */}
       <section className="stats">
