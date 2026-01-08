@@ -30,7 +30,7 @@ function About() {
             <TechTag>Langflow</TechTag>
           </div>
         </div>
-        <div className="hero-image">
+        <div className="hero-image-about-section">
           <img src="./src/assets/Hero Image ER.png" alt="AI Technology" />
         </div>
       </div>

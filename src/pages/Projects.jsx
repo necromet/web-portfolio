@@ -66,59 +66,59 @@ const projectsData = [
 
 function Projects() {
   return (
-    <div className="projects-page">
-      <section className="projects-hero">
-        <h1 className="page-title">My Projects</h1>
-        <p className="page-subtitle">
-          A collection of my recent work and personal projects
-        </p>
-      </section>
-
-      <section className="projects-grid">
-        {projectsData.map((project) => (
-          <article key={project.id} className="project-card">
-            <div className="project-image-container">
-              <img 
-                src={project.image} 
-                alt={project.title}
-                className="project-image"
-              />
-            </div>
-            <div className="project-content">
-              <h3 className="project-title">{project.title}</h3>
-              <p className="project-description">{project.description}</p>
-              <div className="project-technologies">
-                {project.technologies.map((tech, index) => (
-                  <TechTag key={index}>{tech}</TechTag>
-                ))}
+    <section id="projects" className="projects">
+      <div className="project-wrapper">
+        <div className="hero-content">
+          <h1 className="hero-title">
+            <span className="highlight">#</span> projects
+          </h1>
+        </div>
+        <div className="projects-grid">  
+          {projectsData.map((project) => (
+            <article key={project.id} className="project-card">
+              <div className="project-image-container">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="project-image"
+                />
               </div>
-              <div className="project-links">
-                <a 
-                  href={project.demoLink} 
-                  className="project-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`View ${project.title} demo`}
-                >
-                  <span>Live Demo</span>
-                  <span className="link-icon">→</span>
-                </a>
-                <a 
-                  href={project.githubLink} 
-                  className="project-link secondary"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`View ${project.title} source code`}
-                >
-                  <span>GitHub</span>
-                  <span className="link-icon">→</span>
-                </a>
+              <div className="project-content">
+                <h3 className="project-title">{project.title}</h3>
+                <p className="project-description">{project.description}</p>
+                <div className="project-technologies">
+                  {project.technologies.map((tech, index) => (
+                    <TechTag key={index}>{tech}</TechTag>
+                  ))}
+                </div>
+                <div className="project-links">
+                  <a 
+                    href={project.demoLink} 
+                    className="project-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`View ${project.title} demo`}
+                  >
+                    <span>Live Demo</span>
+                    <span className="link-icon">→</span>
+                  </a>
+                  <a 
+                    href={project.githubLink} 
+                    className="project-link secondary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`View ${project.title} source code`}
+                  >
+                    <span>GitHub</span>
+                    <span className="link-icon">→</span>
+                  </a>
+                </div>
               </div>
-            </div>
-          </article>
-        ))}
-      </section>
-    </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 

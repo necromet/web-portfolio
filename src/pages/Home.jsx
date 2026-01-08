@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import ExperienceSection from '../components/ExperienceSection';
 import About from './About';
 import './Home.css';
+import Projects from './Projects';
 
 /**
  * Home/Landing Page Component
@@ -33,46 +34,7 @@ function Home() {
       <About />
       {/* Experience Section */}
       <ExperienceSection />
-
-      {/* Quick Stats Section */}
-      <section className="stats">
-        <div className="stats-grid">
-          <div className="stat-card">
-            <h3 className="stat-number">3+</h3>
-            <p className="stat-label">Years Experience</p>
-          </div>
-          <div className="stat-card">
-            <h3 className="stat-number">15+</h3>
-            <p className="stat-label">Projects Completed</p>
-          </div>
-          <div className="stat-card">
-            <h3 className="stat-number">30+</h3>
-            <p className="stat-label">Happy Clients</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Skills */}
-      <section className="skills-preview">
-        <h2 className="section-title">Core Expertise</h2>
-        <div className="skills-grid">
-          <div className="skill-item">
-            <span className="skill-icon">⚛️</span>
-            <h3>Frontend Development</h3>
-            <p>React, Vue, TypeScript, Modern CSS</p>
-          </div>
-          <div className="skill-item">
-            <span className="skill-icon">🔧</span>
-            <h3>Backend Development</h3>
-            <p>Node.js, Python, REST APIs, Databases</p>
-          </div>
-          <div className="skill-item">
-            <span className="skill-icon">🎨</span>
-            <h3>UI/UX Design</h3>
-            <p>Figma, Responsive Design, Accessibility</p>
-          </div>
-        </div>
-      </section>
+      <Projects />
     </div>
   );
 }

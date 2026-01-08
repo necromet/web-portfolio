@@ -37,12 +37,20 @@ function Navigation() {
               </a>
             </li>
             <li>
-              <Link 
-                to="/projects" 
-                className={location.pathname === '/projects' ? 'nav-link active' : 'nav-link'}
+              <a 
+                href="/#experience" 
+                className={location.hash === '#experience' ? 'nav-link active' : 'nav-link'}
+              >
+                Experience
+              </a>
+            </li>
+            <li>
+              <a
+                href="/#projects" 
+                className={location.hash === '#projects' ? 'nav-link active' : 'nav-link'}
               >
                 Projects
-              </Link>
+              </a>
             </li>
             <li>
               <Link 
