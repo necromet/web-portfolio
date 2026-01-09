@@ -1,42 +1,74 @@
-/* Theme Toggle Button Styles */
+/* Theme Toggle Slider Styles */
 .theme-toggle {
   background: transparent;
-  border: 2px solid var(--border-color);
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  border: none;
   padding: 0;
-}
-
-.theme-toggle:hover {
-  background: var(--bg-secondary);
-  border-color: var(--primary-color);
-  transform: rotate(20deg);
-}
-
-.theme-toggle:active {
-  transform: scale(0.95) rotate(20deg);
-}
-
-.theme-toggle-icon {
-  font-size: 1.25rem;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease;
 }
 
-.theme-toggle:hover .theme-toggle-icon {
-  transform: scale(1.1);
+.slider {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  border: 2px solid var(--primary-color);
+  border-radius: 30px;
+  transition: background-color 1s ease;
+  display: flex;
+  align-items: center;
+  padding: 3px;
+  background-size: 90px 90px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.slider.light {
+  background-color: #ddd;
+  background-image: url('../assets/light_mode.svg');
+}
+
+.slider.dark {
+  background-color: #4a5568;
+  background-image: url('../assets/dark_mode.svg');
+}
+
+.slider-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  position: absolute;
+}
+
+.slider-circle-dark {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  position: absolute;
+}
+
+.slider.light .slider-circle {
+  transform: translateX(0);
+}
+
+.slider.dark .slider-circle {
+  transform: translateX(30px);
+}
+
+.theme-toggle:hover .slider {
+  opacity: 0.9;
 }
 
 /* Focus state for accessibility */
 .theme-toggle:focus-visible {
   outline: 2px solid var(--primary-color);
   outline-offset: 2px;
+  border-radius: 30px;
 }

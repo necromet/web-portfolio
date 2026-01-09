@@ -10,9 +10,11 @@ function ThemeToggle() {
       onClick={toggleTheme}
       aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
       title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+      role="switch"
+      aria-checked={theme === 'dark'}
     >
-      <span className="theme-toggle-icon">
-        {theme === 'light' ? '🌙' : '☀️'}
+      <span className={`slider ${theme === 'dark' ? 'dark' : 'light'}`}>
+        <span className={`slider-circle ${theme === 'dark' ? 'slider-circle-dark' : ''}`}></span>
       </span>
     </button>
   );
