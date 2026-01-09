@@ -162,7 +162,7 @@
 .experience {
   min-height: calc(100vh - 80px);
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   padding: 120px 2rem 4rem;
 }
@@ -267,7 +267,7 @@
 }
 
 .project-wrapper {
-  max-width: 1000px;
+  max-width: 1200px;
   width: 100%;
 }
 

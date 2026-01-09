@@ -33,7 +33,7 @@
 .projects-grid {
   max-width: 2000px;
   margin: 0 auto;
-  padding: 4rem 2rem;
+  padding: 2rem 2rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
@@ -41,6 +41,7 @@
 
 /* Project Card */
 .project-card {
+  max-height: 100%;
   background: var(--card-bg);
   border-radius: 12px;
   overflow: hidden;
@@ -123,12 +124,12 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.75rem 1rem;
+  padding: 0.5rem 0.75rem;
   background: var(--primary-color);
   color: #ffffff;
   text-decoration: none;
   border-radius: 8px;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 0.95rem;
   transition: all 0.3s ease;
   border: 2px solid var(--primary-color);
@@ -156,6 +157,10 @@
 
 .project-link:hover .link-icon {
   transform: translateX(3px);
+}
+
+.project-logo {
+  margin-bottom: 20px;
 }
 
 /* Animations */
