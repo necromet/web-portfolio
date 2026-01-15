@@ -1,11 +1,13 @@
 import './About.css';
 import TechTag from '../components/TechTag';
+import { useTheme } from '../context/ThemeContext';
 
 /**
  * About Page Component
  * Personal bio, skills, and professional experience
  */
 function About() {
+  const { theme } = useTheme();
   return (
     <section id="about" className="about">
       <div className="hero-container">
@@ -31,7 +33,7 @@ function About() {
           </div>
         </div>
         <div className="hero-image-about-section">
-          <img src="./src/assets/Hero Image ER.png" alt="AI Technology" />
+          <img src={theme === 'dark' ? '/src/assets/edward_photo_white.png' : '/src/assets/edward_photo_purple_outline.png'} alt="AI Technology"/>
         </div>
       </div>
     </section>
