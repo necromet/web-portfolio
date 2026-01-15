@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import Navigation from './components/Navigation';
-import Home from './pages/Home';
-import Projects from './pages/Projects';
-import About from './pages/About';
-import Contact from './pages/Contact';
+import Home from './sections/Home';
+import Projects from './sections/Projects';
+import About from './sections/About';
+import Contact from './sections/Contact';
 import './App.css';
 
 function App() {

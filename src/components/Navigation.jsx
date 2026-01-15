@@ -52,14 +52,14 @@ function Navigation() {
                 Projects
               </a>
             </li>
-            <li>
+            {/* <li>
               <Link 
                 to="/contact" 
                 className={location.pathname === '/contact' ? 'nav-link active' : 'nav-link'}
               >
                 Contact
               </Link>
-            </li>
+            </li> */}
           </ul>
         </div>
         <MediaNavigator />

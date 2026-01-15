@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import ExperienceSection from '../components/ExperienceSection';
-import About from './About';
+import ExperienceSection from '../components/ExperienceSection.jsx';
+import About from './About.jsx';
 import './Home.css';
-import Projects from './Projects';
+import Projects from './Projects.jsx';
 import HeroImage from './heroimage.jsx';
 
 /**

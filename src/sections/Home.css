@@ -16,6 +16,7 @@
 
 .hero-container {
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 3rem;
   max-width: 1200px;
@@ -37,7 +38,7 @@
 
 .hero-image-about-section {
   flex: 0 0 auto;
-  max-width: 450px;
+  max-width: 300px;
   width: 100%;
   animation: fadeInLeft 0.8s ease-out;
 }
