@@ -3,6 +3,7 @@ import ExperienceSection from '../components/ExperienceSection';
 import About from './About';
 import './Home.css';
 import Projects from './Projects';
+import HeroImage from './heroimage.jsx';
 
 /**
  * Home/Landing Page Component
@@ -14,7 +15,7 @@ function Home() {
       <section id="intro" className="hero">
         <div className="hero-container">
           <div className="hero-image">
-            <img src="./src/assets/Hero Image ER.png" alt="AI Technology" />
+            <HeroImage />
           </div>
           <div className="hero-content">
             <h1 className="hero-title-with-cursor" align="left">
