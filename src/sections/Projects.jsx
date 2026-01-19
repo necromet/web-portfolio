@@ -71,7 +71,7 @@ function Projects() {
                       rel="noopener noreferrer"
                       aria-label={`View ${project.title} demo`}
                     >
-                      <span>Project Details</span>
+                      <span>Details</span>
                       <span className="link-icon">→</span>
                     </a>
                   ) : (
@@ -80,7 +80,7 @@ function Projects() {
                       className="project-link"
                       aria-label={`View ${project.title} demo`}
                     >
-                      <span>Project Details</span>
+                      <span>Details</span>
                       <span className="link-icon">→</span>
                     </Link>
                   )}
