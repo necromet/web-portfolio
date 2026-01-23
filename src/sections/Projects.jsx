@@ -1,42 +1,38 @@
 import './Projects.css';
 import ProjectTag from '../components/ProjectTag';
 import match_word from '../assets/match_word.svg';
+import receipt_parser from '../assets/receipt_long.svg';
+import analytics from '../assets/analytics.svg';
 import { Link } from 'react-router-dom';
 
-/**
- * Projects Page Component
- * Showcases portfolio projects with descriptions and links
- */
-
-// Placeholder project data
 const projectsData = [
   {
     id: 1,
     title: 'AI Document Translator',
-    description: 'A full-stack e-commerce solution with real-time inventory management, payment integration, and admin dashboard.',
+    description: 'A Document translator powered by AI that translates documents while preserving format and layout.',
     technologies: ['Python'],
     logo: <img src={match_word} alt="AI Document Translator" />,
     demoLink: '/ai-doc-translator',
     githubLink: 'https://github.com/necromet/ai-document-translator',
   },
-  // {
-  //   id: 2,
-  //   title: 'Task Management App',
-  //   description: 'Collaborative task management tool with drag-and-drop interface, team sharing, and progress tracking.',
-  //   technologies: ['Vue.js', 'Firebase', 'Tailwind CSS'],
-  //   logo: '✓',
-  //   demoLink: '#',
-  //   githubLink: '#',
-  // },
-  // {
-  //   id: 3,
-  //   title: 'Weather Dashboard',
-  //   description: 'Real-time weather application with location-based forecasts, interactive maps, and weather alerts.',
-  //   technologies: ['React', 'OpenWeather API', 'Chart.js'],
-  //   logo: '☀',
-  //   demoLink: '#',
-  //   githubLink: '#',
-  // },
+  {
+    id: 2,
+    title: 'Receipt Parser',
+    description: 'Parses receipts to extract key information such as vendor, date, total amount, and itemized purchases using PaddleOCR and LLM.',
+    technologies: ['Python'],
+    logo: <img src={receipt_parser} alt="Receipt Parser" />,
+    demoLink: '/receipt-parser',
+    githubLink: 'https://github.com/necromet/ai-receipt-agent',
+  },
+  {
+    id: 3,
+    title: 'AI Data Analyzer',
+    description: 'An AI-powered data analysis tool that generates insights and visualizations from datasets using natural language queries.',
+    technologies: ['Python', 'LangGraph', 'LangChain'],
+    logo: <img src={analytics} alt="AI Data Analyzer" />,
+    demoLink: '/ai-data-analyzer',
+    githubLink: 'https://github.com/necromet/ai-data-analyzer',
+  },
 ];
 
 function Projects() {
@@ -71,7 +67,7 @@ function Projects() {
                       rel="noopener noreferrer"
                       aria-label={`View ${project.title} demo`}
                     >
-                      <span>Project Details</span>
+                      <span>Details</span>
                       <span className="link-icon">→</span>
                     </a>
                   ) : (
@@ -80,7 +76,7 @@ function Projects() {
                       className="project-link"
                       aria-label={`View ${project.title} demo`}
                     >
-                      <span>Project Details</span>
+                      <span>Details</span>
                       <span className="link-icon">→</span>
                     </Link>
                   )}
