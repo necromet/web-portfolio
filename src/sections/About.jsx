@@ -1,6 +1,8 @@
 import './About.css';
 import TechTag from '../components/TechTag';
 import { useTheme } from '../context/ThemeContext';
+import edwardPhotoWhite from '../assets/edward_photo_white.png';
+import edwardPhotoPurple from '../assets/edward_photo_purple_outline.png';
 
 /**
  * About Page Component
@@ -33,7 +35,7 @@ function About() {
           </div>
         </div>
         <div className="hero-image-about-section">
-          <img src={theme === 'dark' ? '/src/assets/edward_photo_white.png' : '/src/assets/edward_photo_purple_outline.png'} alt="AI Technology"/>
+          <img src={theme === 'dark' ? edwardPhotoWhite : edwardPhotoPurple} alt="edward_outline"/>
         </div>
       </div>
     </section>
