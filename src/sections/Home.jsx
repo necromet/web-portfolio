@@ -5,10 +5,6 @@ import './Home.css';
 import Projects from './Projects.jsx';
 import HeroImage from './heroimage.jsx';
 
-/**
- * Home/Landing Page Component
- * Hero section with professional introduction and call-to-action
- */
 function Home() {
   return (
     <div className="home">

@@ -22,7 +22,7 @@ function Navigation() {
           <ul className="nav-menu">
             <li>
               <a 
-                href="/#intro" 
+                href="#intro" 
                 className={location.hash === '#intro' ? 'nav-link active' : 'nav-link'}
               >
                 Home
@@ -30,7 +30,7 @@ function Navigation() {
             </li>
             <li>
               <a 
-                href="/#about" 
+                href="#about" 
                 className={location.hash === '#about' ? 'nav-link active' : 'nav-link'}
               >
                 About
@@ -38,7 +38,7 @@ function Navigation() {
             </li>
             <li>
               <a 
-                href="/#experience" 
+                href="#experience" 
                 className={location.hash === '#experience' ? 'nav-link active' : 'nav-link'}
               >
                 Experience
@@ -46,7 +46,7 @@ function Navigation() {
             </li>
             <li>
               <a
-                href="/#projects" 
+                href="#projects" 
                 className={location.hash === '#projects' ? 'nav-link active' : 'nav-link'}
               >
                 Projects
