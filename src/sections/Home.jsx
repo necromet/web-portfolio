@@ -20,11 +20,6 @@ function Home() {
             <p className="hero-description" align="left">
               I'm a data scientist and mathematician based in Indonesia. I'm fascinated by <span className="hero-description-bold">artificial intelligence</span> and its potential.
             </p>
-            <div style={{ textAlign: 'left' }}>
-              <Link to="/contact" className="btn btn-secondary">
-                  Get in Touch
-              </Link>
-            </div>
           </div>
         </div>
       </section>

@@ -59,27 +59,6 @@ function Projects() {
                   ))}
                 </div>
                 <div className="project-links">
-                  {project.demoLink.startsWith('http') ? (
-                    <a 
-                      href={project.demoLink} 
-                      className="project-link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`View ${project.title} demo`}
-                    >
-                      <span>Details</span>
-                      <span className="link-icon">→</span>
-                    </a>
-                  ) : (
-                    <Link 
-                      to={project.demoLink} 
-                      className="project-link"
-                      aria-label={`View ${project.title} demo`}
-                    >
-                      <span>Details</span>
-                      <span className="link-icon">→</span>
-                    </Link>
-                  )}
                   <a 
                     href={project.githubLink} 
                     className="project-link secondary"
