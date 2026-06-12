@@ -1,4 +1,3 @@
-import { useTheme } from '../context/ThemeContext';
 import './MediaNavigation.css';
 
 function MediaNavigator() {

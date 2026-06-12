@@ -33,6 +33,11 @@ function About() {
             <TechTag>Superset</TechTag>
             <TechTag>Langflow</TechTag>
           </div>
+          <div className="tech-tags-container">
+            <TechTag>LangChain</TechTag>
+            <TechTag>LangGraph</TechTag>
+            <TechTag>PaddleOCR</TechTag>
+          </div>
         </div>
         <div className="hero-image-about-section">
           <img src={theme === 'dark' ? edwardPhotoWhite : edwardPhotoPurple} alt="edward_outline"/>
