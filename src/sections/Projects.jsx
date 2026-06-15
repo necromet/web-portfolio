@@ -3,25 +3,22 @@ import ProjectTag from '../components/ProjectTag';
 import match_word from '../assets/match_word.svg';
 import receipt_parser from '../assets/receipt_long.svg';
 import analytics from '../assets/analytics.svg';
-import { Link } from 'react-router-dom';
 
 const projectsData = [
   {
     id: 1,
     title: 'AI Document Translator',
     description: 'A Document translator powered by AI that translates documents while preserving format and layout.',
-    technologies: ['Python'],
+    technologies: ['Python', 'Flask', 'LangChain'],
     logo: <img src={match_word} alt="AI Document Translator" />,
-    demoLink: '/ai-doc-translator',
     githubLink: 'https://github.com/necromet/ai-document-translator',
   },
   {
     id: 2,
     title: 'Receipt Parser',
     description: 'Parses receipts to extract key information such as vendor, date, total amount, and itemized purchases using PaddleOCR and LLM.',
-    technologies: ['Python'],
+    technologies: ['Python', 'PaddleOCR', 'LangChain'],
     logo: <img src={receipt_parser} alt="Receipt Parser" />,
-    demoLink: '/receipt-parser',
     githubLink: 'https://github.com/necromet/ai-receipt-agent',
   },
   {
@@ -30,8 +27,15 @@ const projectsData = [
     description: 'An AI-powered data analysis tool that generates insights and visualizations from datasets using natural language queries.',
     technologies: ['Python', 'LangGraph', 'LangChain'],
     logo: <img src={analytics} alt="AI Data Analyzer" />,
-    demoLink: '/ai-data-analyzer',
     githubLink: 'https://github.com/necromet/ai-data-analyzer',
+  },
+  {
+    id: 4,
+    title: 'Airbnb EDA & Dashboard',
+    description: 'Interactive data analysis of ~102K Airbnb listings in NYC with exploratory data analysis, a Streamlit dashboard with 7 tabs of visualizations, and A/B testing for business insights.',
+    technologies: ['Python', 'Streamlit', 'Plotly'],
+    logo: <img src={analytics} alt="Airbnb EDA & Dashboard" />,
+    githubLink: 'https://github.com/necromet/Airbnb-Opendata-EDA-Visualization',
   },
 ];
 

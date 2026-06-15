@@ -1,46 +1,13 @@
-import { useState } from 'react';
+import { useForm } from '@formspree/react';
 import './Contact.css';
 
-/**
- * Contact Page Component
- * Contact form and social media links
- */
-
 function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  });
-
-  const [formStatus, setFormStatus] = useState(null);
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // This is a frontend-only form - in production, you'd send this to a backend
-    console.log('Form submitted:', formData);
-    setFormStatus('success');
-    
-    // Reset form after submission
-    setTimeout(() => {
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      setFormStatus(null);
-    }, 3000);
-  };
+  const [state, handleSubmit] = useForm("FORM_ID_PLACEHOLDER");
 
   const socialLinks = [
-    { name: 'GitHub', url: 'https://github.com', icon: '📁' },
-    { name: 'LinkedIn', url: 'https://linkedin.com', icon: '💼' },
-    { name: 'Twitter', url: 'https://twitter.com', icon: '🐦' },
-    { name: 'Email', url: 'mailto:your.email@example.com', icon: '✉️' },
+    { name: 'GitHub', url: 'https://github.com/necromet', icon: '📁' },
+    { name: 'LinkedIn', url: 'https://linkedin.com/in/edward-renaldi', icon: '💼' },
+    { name: 'Email', url: 'mailto:edwardrenaldi219@gmail.com', icon: '✉️' },
   ];
 
   return (
@@ -57,85 +24,88 @@ function Contact() {
           {/* Contact Form */}
           <div className="contact-form-wrapper">
             <h2 className="section-heading">Send a Message</h2>
-            <form onSubmit={handleSubmit} className="contact-form">
-              <div className="form-group">
-                <label htmlFor="name" className="form-label">
-                  Name <span className="required">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="form-input"
-                  placeholder="Your name"
-                  aria-required="true"
-                />
+
+            {state.succeeded ? (
+              <div className="form-message success" role="alert">
+                Thank you! Your message has been sent successfully.
               </div>
-
-              <div className="form-group">
-                <label htmlFor="email" className="form-label">
-                  Email <span className="required">*</span>
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="form-input"
-                  placeholder="your.email@example.com"
-                  aria-required="true"
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="subject" className="form-label">
-                  Subject <span className="required">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                  className="form-input"
-                  placeholder="What is this about?"
-                  aria-required="true"
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="message" className="form-label">
-                  Message <span className="required">*</span>
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  className="form-textarea"
-                  rows="6"
-                  placeholder="Tell me about your project..."
-                  aria-required="true"
-                />
-              </div>
-
-              <button type="submit" className="submit-button">
-                Send Message
-              </button>
-
-              {formStatus === 'success' && (
-                <div className="form-message success" role="alert">
-                  Thank you! Your message has been sent successfully.
+            ) : (
+              <form onSubmit={handleSubmit} className="contact-form">
+                <div className="form-group">
+                  <label htmlFor="name" className="form-label">
+                    Name <span className="required">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    className="form-input"
+                    placeholder="Your name"
+                    aria-required="true"
+                  />
                 </div>
-              )}
-            </form>
+
+                <div className="form-group">
+                  <label htmlFor="email" className="form-label">
+                    Email <span className="required">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    className="form-input"
+                    placeholder="your.email@example.com"
+                    aria-required="true"
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="subject" className="form-label">
+                    Subject <span className="required">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    required
+                    className="form-input"
+                    placeholder="What is this about?"
+                    aria-required="true"
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="message" className="form-label">
+                    Message <span className="required">*</span>
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    required
+                    className="form-textarea"
+                    rows="6"
+                    placeholder="Tell me about your project..."
+                    aria-required="true"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="submit-button"
+                  disabled={state.submitting}
+                >
+                  {state.submitting ? 'Sending...' : 'Send Message'}
+                </button>
+
+                {state.errors && (
+                  <div className="form-message error" role="alert">
+                    Something went wrong. Please try again later.
+                  </div>
+                )}
+              </form>
+            )}
           </div>
 
           {/* Contact Info */}
@@ -166,7 +136,13 @@ function Contact() {
             <div className="quick-info">
               <div className="info-item">
                 <h3 className="info-title">Location</h3>
-                <p className="info-text">San Francisco, CA</p>
+                <p className="info-text">Indonesia</p>
+              </div>
+              <div className="info-item">
+                <h3 className="info-title">Business Inquiries</h3>
+                <p className="info-text">
+                  <a href="mailto:eraicode@gmail.com" className="info-email-link">eraicode@gmail.com</a>
+                </p>
               </div>
               <div className="info-item">
                 <h3 className="info-title">Availability</h3>

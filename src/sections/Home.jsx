@@ -1,11 +1,23 @@
-import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import ExperienceSection from '../components/ExperienceSection.jsx';
 import About from './About.jsx';
 import './Home.css';
 import Projects from './Projects.jsx';
-import HeroImage from './heroimage.jsx';
+import HeroImage from './HeroImage.jsx';
 
 function Home() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const el = document.getElementById(location.hash.slice(1));
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location]);
+
   return (
     <div className="home">
       <section id="intro" className="hero">

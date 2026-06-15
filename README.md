@@ -2,36 +2,36 @@
 
 A clean, modern, and professional personal portfolio website built with React and Vite. Designed to be minimal, high-trust, and recruiter-friendly with a strong focus on user experience and accessibility.
 
-## 🌟 Features
+## Features
 
 - **Clean & Modern Design**: Minimalist aesthetic with strong typography and plenty of whitespace
-- **Fully Responsive**: Mobile-first approach ensures perfect display on all devices
-- **Smooth Animations**: Subtle, professional animations enhance user experience
-- **SEO Optimized**: Meta tags and semantic HTML for better search engine visibility
+- **Fully Responsive**: Mobile-first approach ensures display on all devices
+- **Smooth Animations**: Professional SVG path animations (animejs) and scroll-triggered effects (GSAP)
+- **SEO Optimized**: Meta tags, Open Graph, Twitter Cards, and semantic HTML
 - **Accessible**: WCAG compliant with proper contrast ratios and keyboard navigation
-- **Fast Performance**: Built with Vite for lightning-fast development and production builds
+- **Dark Mode**: Theme toggle with localStorage persistence and system preference detection
+- **Fast Performance**: Built with Vite (rolldown-vite) for fast development and production builds
 
-## 📄 Pages
+## Pages
 
-1. **Home/Landing**: Hero section with introduction and call-to-action
-2. **Projects**: Showcase of portfolio projects with descriptions and links
-3. **About**: Personal bio, technical skills, and professional experience
-4. **Contact**: Contact form and social media links
+1. **Home/Landing**: Hero section with SVG animation, introduction, about, experience, and projects
+2. **Contact**: Contact form and social media links
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-- **Framework**: React 18
-- **Build Tool**: Vite
-- **Routing**: React Router v6
+- **Framework**: React 19.2.0
+- **Build Tool**: rolldown-vite 7.2.5
+- **Routing**: React Router v7.11.0
 - **Styling**: Pure CSS with CSS Variables
-- **Icons**: Unicode Emojis (no external dependencies)
+- **Animations**: animejs 4.3.3 (SVG path drawing), GSAP 3.14.2 (ScrollTrigger)
+- **Icons**: Unicode Emojis and react-icons
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
-- Node.js (v14 or higher)
-- npm or yarn
+- Node.js (v18 or higher)
+- npm
 
 ### Installation
 
@@ -47,59 +47,68 @@ npm run build
 
 # Preview production build
 npm run preview
+
+# Deploy to GitHub Pages
+npm run deploy
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 src/
+├── assets/                  # Images, SVGs, and static assets
 ├── components/
-│   ├── Navigation.jsx       # Main navigation component
-│   └── Navigation.css
+│   ├── ExperienceSection.jsx  # Work experience timeline
+│   ├── MediaNavigation.jsx    # Social media links (GitHub, LinkedIn, Email)
+│   ├── Navigation.jsx         # Main navigation bar
+│   ├── ProjectTag.jsx         # Technology tag component
+│   ├── TechTag.jsx            # Tech stack tag component
+│   └── ThemeToggle.jsx        # Dark/light mode toggle
+├── context/
+│   └── ThemeContext.jsx      # Theme state management
 ├── pages/
-│   ├── Home.jsx            # Landing page
-│   ├── Home.css
-│   ├── Projects.jsx        # Projects showcase
-│   ├── Projects.css
-│   ├── About.jsx           # About me page
-│   ├── About.css
-│   ├── Contact.jsx         # Contact form
-│   └── Contact.css
-├── App.jsx                 # Main app component with routing
-├── App.css
-├── index.css               # Global styles
-└── main.jsx                # App entry point
+│   └── ai-doc-translator.jsx # Project detail page (WIP)
+├── sections/
+│   ├── About.jsx             # About me section
+│   ├── Contact.jsx           # Contact form and info
+│   ├── HeroImage.jsx         # SVG path animation
+│   ├── Home.jsx              # Landing page (composes all sections)
+│   ├── Projects.jsx          # Project showcase
+│   └── *.css                 # Section-specific styles
+├── App.jsx                   # Router and layout
+├── index.css                 # Global styles and CSS variables
+└── main.jsx                  # App entry point
 ```
 
-## 🎨 Customization
+## Customization
 
 ### Update Personal Information
 
-1. **Navigation Logo**: Edit [src/components/Navigation.jsx](src/components/Navigation.jsx)
-2. **Home Page Content**: Edit [src/pages/Home.jsx](src/pages/Home.jsx)
-3. **Projects**: Update `projectsData` array in [src/pages/Projects.jsx](src/pages/Projects.jsx)
-4. **About Page**: Edit [src/pages/About.jsx](src/pages/About.jsx)
-5. **Contact Info**: Update `socialLinks` in [src/pages/Contact.jsx](src/pages/Contact.jsx)
-6. **SEO Meta Tags**: Edit [index.html](index.html)
+1. **Navigation Logo**: Edit `src/components/Navigation.jsx`
+2. **Home Page Content**: Edit `src/sections/Home.jsx`
+3. **Projects**: Update `projectsData` array in `src/sections/Projects.jsx`
+4. **About Page**: Edit `src/sections/About.jsx`
+5. **Contact Info**: Update `socialLinks` in `src/sections/Contact.jsx`
+6. **SEO Meta Tags**: Edit `index.html`
 
 ### Color Scheme
 
-Colors are defined using CSS variables in [src/index.css](src/index.css):
+Colors are defined using CSS variables in `src/index.css`:
 
 ```css
---primary-color: #4a90e2;
---primary-dark: #357abd;
+--primary-color: #745cec;
+--primary-dark: #654aeb;
 --text-primary: #1a1a1a;
 --text-secondary: #666;
 ```
 
-## 📱 Responsive Breakpoints
+## Responsive Breakpoints
 
 - Mobile: < 480px
 - Tablet: 481px - 768px
 - Desktop: > 769px
 
-## ♿ Accessibility Features
+## Accessibility Features
 
 - Semantic HTML structure
 - ARIA labels for links and buttons
@@ -108,54 +117,23 @@ Colors are defined using CSS variables in [src/index.css](src/index.css):
 - Reduced motion support for users with motion sensitivity
 - High contrast text for readability
 
-## 🔧 Form Functionality
+## Deployment
 
-The contact form is currently frontend-only. To make it functional:
-
-1. **Email Service**: Integrate with EmailJS, Formspree, or similar
-2. **Backend API**: Connect to your own backend endpoint
-3. **Serverless Function**: Use Netlify/Vercel functions
-
-## 📦 Deployment
-
-### Netlify
+This project is configured for GitHub Pages deployment:
 
 ```bash
-npm run build
-# Drag and drop 'dist' folder to Netlify
+npm run deploy
 ```
 
-### Vercel
+The site is deployed to: https://necromet.github.io/web-portfolio
 
-```bash
-npm install -g vercel
-vercel
-```
-
-### GitHub Pages
-
-```bash
-npm run build
-# Deploy 'dist' folder to gh-pages branch
-```
-
-## 📝 License
+## License
 
 This project is open source and available under the MIT License.
 
-## 👤 Author
+## Author
 
-**Your Name**
-- Website: https://yourwebsite.com
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your Name](https://linkedin.com/in/yourprofile)
-
-## 🙏 Acknowledgments
-
-- Built with React and Vite
-- Placeholder images from placeholder.com
-- Icons using Unicode emoji characters
-
----
-
-**Note**: Remember to replace all placeholder content (names, links, images) with your actual information before deploying!
+**Edward Renaldi**
+- GitHub: [@necromet](https://github.com/necromet)
+- LinkedIn: [Edward Renaldi](https://linkedin.com/in/edward-renaldi)
+- Email: edwardrenaldi219@gmail.com

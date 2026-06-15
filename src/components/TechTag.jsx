@@ -1,5 +1,4 @@
 import './TechTag.css';
-import pythonIcon from '../assets/python.svg';
 
 /**
  * TechTag Component

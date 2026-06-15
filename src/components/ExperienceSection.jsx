@@ -15,6 +15,25 @@ const experiences = {
       'Accountable in ETL processes using Python and SQL to ensure data accuracy and reliability for analysis and reporting.'
     ]
   },
+  'Traffic Simulation': {
+    role: 'Freelance Algorithm Developer',
+    company: 'Freelance',
+    date: '2026',
+    points: [
+      'Developed mathematical formulas into traffic light optimization algorithms using OSMnx road network data across Connecticut and New Jersey, United States.',
+      'Built a road traffic simulation running on peak-hour conditions with traffic density derived from road length, width, and other geometric features.',
+      'Reduced 48 road metrics into a single optimization output to minimize overall traffic congestion.'
+    ]
+  },
+  '100sheep.net': {
+    role: 'Creator & Developer',
+    company: '100sheep.net',
+    date: '2026',
+    points: [
+      'Created and launched onehundredsheep, a church care management platform that helps pastors track attendance, manage cell groups, and follow up with members.',
+      'Built a full-stack web application featuring QR code attendance, member statistics, role-based access, and CSV import — from concept to deployment.'
+    ]
+  },
   'Outlier': {
     role: 'Freelance AI Mathematics Trainer',
     company: 'Outlier',

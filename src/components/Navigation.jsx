@@ -11,6 +11,12 @@ import './Navigation.css';
 function Navigation() {
   const location = useLocation();
 
+  const isActiveSection = (hash) => {
+    if (location.pathname !== '/') return false;
+    if (hash === '#intro') return location.hash === '' || location.hash === '#intro';
+    return location.hash === hash;
+  };
+
   return (
     <nav className="navigation">
       <div className="nav-container">
@@ -21,45 +27,45 @@ function Navigation() {
         <div className="nav-right">
           <ul className="nav-menu">
             <li>
-              <a 
-                href="#intro" 
-                className={location.hash === '#intro' ? 'nav-link active' : 'nav-link'}
+              <Link 
+                to="/#intro" 
+                className={isActiveSection('#intro') ? 'nav-link active' : 'nav-link'}
               >
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a 
-                href="#about" 
-                className={location.hash === '#about' ? 'nav-link active' : 'nav-link'}
+              <Link 
+                to="/#about" 
+                className={isActiveSection('#about') ? 'nav-link active' : 'nav-link'}
               >
                 About
-              </a>
+              </Link>
             </li>
             <li>
-              <a 
-                href="#experience" 
-                className={location.hash === '#experience' ? 'nav-link active' : 'nav-link'}
+              <Link 
+                to="/#experience" 
+                className={isActiveSection('#experience') ? 'nav-link active' : 'nav-link'}
               >
                 Experience
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#projects" 
-                className={location.hash === '#projects' ? 'nav-link active' : 'nav-link'}
+              <Link
+                to="/#projects" 
+                className={isActiveSection('#projects') ? 'nav-link active' : 'nav-link'}
               >
                 Projects
-              </a>
+              </Link>
             </li>
-            {/* <li>
+            <li>
               <Link 
                 to="/contact" 
                 className={location.pathname === '/contact' ? 'nav-link active' : 'nav-link'}
               >
                 Contact
               </Link>
-            </li> */}
+            </li>
           </ul>
         </div>
         <MediaNavigator />
