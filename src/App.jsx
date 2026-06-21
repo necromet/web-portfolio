@@ -27,7 +27,7 @@ function AppContent() {
 function App() {
   return (
     <ThemeProvider>
-      <Router basename="/web-portfolio">
+      <Router basename="/">
         <AppContent />
       </Router>
     </ThemeProvider>
