@@ -1,7 +1,10 @@
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import ThemeToggle from './ThemeToggle';
 import MediaNavigator from './MediaNavigation';
 import './Navigation.css';
+
+const sectionIds = ['intro', 'about', 'experience', 'projects'];
 
 /**
  * Navigation Component
@@ -10,11 +13,46 @@ import './Navigation.css';
  */
 function Navigation() {
   const location = useLocation();
+  const [activeSection, setActiveSection] = useState('intro');
+
+  useEffect(() => {
+    if (location.pathname !== '/') return;
+
+    const observers = [];
+    const visibilityMap = new Map();
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          visibilityMap.set(id, entry.intersectionRatio);
+
+          let bestId = 'intro';
+          let bestRatio = 0;
+          visibilityMap.forEach((ratio, secId) => {
+            if (ratio > bestRatio) {
+              bestRatio = ratio;
+              bestId = secId;
+            }
+          });
+          if (bestRatio > 0) {
+            setActiveSection(bestId);
+          }
+        },
+        { threshold: [0, 0.25, 0.5, 0.75, 1] }
+      );
+      observer.observe(el);
+      observers.push(observer);
+    });
+
+    return () => observers.forEach((o) => o.disconnect());
+  }, [location.pathname]);
 
   const isActiveSection = (hash) => {
     if (location.pathname !== '/') return false;
-    if (hash === '#intro') return location.hash === '' || location.hash === '#intro';
-    return location.hash === hash;
+    return activeSection === hash.slice(1);
   };
 
   return (

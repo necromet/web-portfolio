@@ -22,6 +22,49 @@
   transition: all 0.3s ease;
 }
 
+/* Contact page: force dark nav & hide footer */
+.app--contact .navigation {
+  background: rgba(5, 5, 16, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.app--contact .nav-logo,
+.app--contact .nav-link {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.app--contact .nav-link:hover,
+.app--contact .nav-link.active {
+  color: #ffffff;
+}
+
+.app--contact .nav-link::after {
+  background: #948aff;
+}
+
+.app--contact .footer {
+  background: #050510;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.app--contact .footer p {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.app--contact .media-navigation {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.app--contact .media-navigation:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.app--contact .slider {
+  border-color: rgba(148, 138, 255, 0.5);
+}
+
 .footer-content {
   max-width: 1200px;
   margin: 0 auto;
