@@ -1,7 +1,7 @@
 .contact-page {
   position: relative;
   min-height: 100vh;
-  background: #050510;
+ background: var(--bg-primary);
   overflow: hidden;
 }
 
@@ -22,14 +22,14 @@
 .contact-hero-title {
   font-size: clamp(2.5rem, 6vw, 4.5rem);
   font-weight: 700;
-  color: #ffffff;
+  color: var(--text-primary);
   letter-spacing: -1px;
   line-height: 1.1;
   margin-bottom: 1rem;
 }
 
 .contact-highlight {
-  background: linear-gradient(135deg, #948aff, #745cec, #56addd);
+  background: linear-gradient(135deg, var(--primary-color), #745cec, #56addd);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -37,7 +37,7 @@
 
 .contact-hero-subtitle {
   font-size: 1.15rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-secondary);
   max-width: 500px;
   margin: 0 auto;
   line-height: 1.7;
@@ -46,7 +46,7 @@
 /* Grid Layout */
 .contact-grid {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
+  grid-template-columns: 1fr;
   gap: 2rem;
   align-items: stretch;
 }
@@ -54,10 +54,10 @@
 /* Glass Card */
 .glass-card {
   position: relative;
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--card-bg);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-color);
   border-radius: 20px;
   padding: 2.5rem;
   overflow: hidden;
@@ -66,7 +66,7 @@
 
 .glass-card:hover {
   border-color: rgba(148, 138, 255, 0.25);
-  box-shadow: 0 0 60px rgba(116, 92, 236, 0.08);
+  box-shadow: var(--shadow-md);
 }
 
 .card-glow {
@@ -75,14 +75,14 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle at 30% 30%, rgba(116, 92, 236, 0.06) 0%, transparent 60%);
+  background: radial-gradient(circle at 30% 30%, rgba(116, 92, 236, 0.04) 0%, transparent 60%);
   pointer-events: none;
 }
 
 .card-title {
   font-size: 1.1rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--text-primary);
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 2rem;
@@ -111,7 +111,7 @@
   display: block;
   font-size: 0.8rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 0.5rem;
@@ -121,10 +121,10 @@
 .form-field textarea {
   width: 100%;
   padding: 0.875rem 1rem;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
   border-radius: 12px;
-  color: #ffffff;
+  color: var(--text-primary);
   font-size: 0.95rem;
   font-family: inherit;
   transition: all 0.3s ease;
@@ -134,13 +134,13 @@
 
 .form-field input::placeholder,
 .form-field textarea::placeholder {
-  color: rgba(255, 255, 255, 0.25);
+  color: var(--text-light);
 }
 
 .form-field input:focus,
 .form-field textarea:focus {
-  border-color: rgba(148, 138, 255, 0.5);
-  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--primary-color);
+  background: var(--bg-primary);
   box-shadow: 0 0 0 3px rgba(116, 92, 236, 0.1);
 }
 
@@ -213,7 +213,7 @@
 }
 
 .form-success p {
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-secondary);
   font-size: 1.05rem;
 }
 
@@ -236,49 +236,103 @@
 }
 
 .info-description {
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--text-secondary);
   line-height: 1.7;
   margin-bottom: 2rem;
   font-size: 0.95rem;
 }
 
-/* Social Grid */
-.social-grid {
+/* Flip Links Section */
+.flip-links-section {
+  padding: 4rem 0;
+}
+
+.flip-links-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 2.5rem;
+}
+
+.flip-links-grid {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.5rem;
 }
 
-.social-btn {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem 1.25rem;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 14px;
-  color: rgba(255, 255, 255, 0.7);
+.flip-link {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
   text-decoration: none;
-  font-weight: 500;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
+  color: var(--text-primary);
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 0.85;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  transition: color 0.3s ease;
 }
 
-.social-btn:hover {
-  background: rgba(148, 138, 255, 0.1);
-  border-color: rgba(148, 138, 255, 0.3);
-  color: #ffffff;
-  transform: translateX(4px);
+.flip-link:hover {
+  color: var(--primary-color);
 }
 
-.social-btn svg {
-  flex-shrink: 0;
-  opacity: 0.7;
-  transition: opacity 0.3s ease;
+/* Flip Word (inline, for headings) */
+.flip-word {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  cursor: default;
 }
 
-.social-btn:hover svg {
-  opacity: 1;
+.flip-link-row {
+  display: flex;
+}
+
+.flip-link-letter {
+  display: inline-block;
+  transition-property: transform;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.flip-link:hover .flip-link-letter {
+  transform: translateY(-110%);
+}
+
+.flip-word:hover .flip-link-letter {
+  transform: translateY(-110%);
+}
+
+.flip-link-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+}
+
+.flip-link-overlay .flip-link-letter {
+  transform: translateY(110%);
+}
+
+.flip-link:hover .flip-link-overlay .flip-link-letter {
+  transform: translateY(0);
+}
+
+.flip-word:hover .flip-link-overlay .flip-link-letter {
+  transform: translateY(0);
+}
+
+.flip-word.contact-highlight .flip-link-letter {
+  color: var(--primary-color);
+  -webkit-text-fill-color: var(--primary-color);
+}
+
+.flip-word.contact-highlight {
+  background: none;
+  -webkit-text-fill-color: unset;
 }
 
 /* Detail Card */
@@ -303,12 +357,12 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--text-light);
 }
 
 .detail-value {
   font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text-primary);
   font-weight: 500;
 }
 
@@ -328,14 +382,14 @@
 
 .detail-link {
   font-size: 0.95rem;
-  color: #948aff;
+  color: var(--primary-color);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .detail-link:hover {
-  color: #b8b0ff;
+  color: var(--primary-dark);
 }
 
 /* Animations */
@@ -386,5 +440,9 @@
 
   .contact-hero-title {
     font-size: 2.25rem;
+  }
+
+  .flip-link {
+    font-size: clamp(2rem, 8vw, 3rem);
   }
 }

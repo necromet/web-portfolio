@@ -30,7 +30,7 @@ function Home() {
               hi, <span className="highlight">edward</span> here.
             </h1>
             <p className="hero-description" align="left">
-              I'm a data scientist and mathematician based in Indonesia. I'm fascinated by <span className="hero-description-bold">artificial intelligence</span> and its potential.
+              I'm a data scientist and mathematician based in Indonesia. I'm fascinated by <span className="hero-description-bold">machine learning, artificial intelligence</span> and its potential.
             </p>
           </div>
         </div>

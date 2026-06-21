@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import Navigation from './components/Navigation';
 import Home from './sections/Home';
@@ -6,11 +6,8 @@ import Contact from './sections/Contact';
 import './App.css';
 
 function AppContent() {
-  const location = useLocation();
-  const isContactPage = location.pathname === '/contact';
-
   return (
-    <div className={`app${isContactPage ? ' app--contact' : ''}`}>
+    <div className="app">
       <Navigation />
       <main className="main-content">
         <Routes>
