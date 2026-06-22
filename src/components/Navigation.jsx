@@ -106,6 +106,14 @@ function Navigation() {
                   Contact
                 </Link>
               </li>
+              <li>
+                <Link 
+                  to="/resume" 
+                  className={location.pathname === '/resume' ? 'nav-link active' : 'nav-link'}
+                >
+                  Resume
+                </Link>
+              </li>
             </ul>
           </div>
           <MediaNavigator />

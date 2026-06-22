@@ -5,6 +5,7 @@ import MobileBottomNav from './components/MobileBottomNav';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './sections/Home';
 import Contact from './sections/Contact';
+import Resume from './sections/Resume';
 import './App.css';
 
 function AppContent() {
@@ -15,6 +16,7 @@ function AppContent() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/resume" element={<Resume />} />
         </Routes>
       </main>
       <footer className="footer">

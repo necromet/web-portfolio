@@ -42,6 +42,7 @@ function MobileDrawer({ isOpen, onClose, activeSection }) {
     { to: '/#experience', hash: '#experience', label: 'Experience' },
     { to: '/#projects', hash: '#projects', label: 'Projects' },
     { to: '/contact', hash: null, label: 'Contact' },
+    { to: '/resume', hash: null, label: 'Resume' },
   ];
 
   return (
@@ -79,7 +80,7 @@ function MobileDrawer({ isOpen, onClose, activeSection }) {
             <Link
               key={item.label}
               to={item.to}
-              className={`drawer-link ${item.hash && isActive(item.hash) ? 'active' : ''} ${!item.hash && location.pathname === '/contact' ? 'active' : ''}`}
+              className={`drawer-link ${item.hash && isActive(item.hash) ? 'active' : ''} ${!item.hash && location.pathname === item.to ? 'active' : ''}`}
               onClick={handleLinkClick}
             >
               <span className="drawer-link-indicator" />
