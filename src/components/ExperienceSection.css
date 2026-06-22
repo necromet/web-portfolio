@@ -13,8 +13,8 @@
   padding: 1.75rem 0 1rem;
 }
 
-.exp-divider--first {
-  padding: 0 0 1rem;
+.exp-group:first-child .exp-divider {
+  padding-top: 0;
 }
 
 .exp-divider__line {

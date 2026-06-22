@@ -235,7 +235,8 @@ function ExperienceSection() {
                 </div>
               )}
               {gi === 0 && (
-                <div className="exp-divider exp-divider--first">
+                <div className="exp-divider">
+                  <span className="exp-divider__line" />
                   <span className="exp-divider__label">{group.label}</span>
                   <span className="exp-divider__line" />
                 </div>
