@@ -28,6 +28,14 @@
   margin-bottom: 1rem;
 }
 
+.contact-hero-clickable {
+  cursor: pointer;
+}
+
+.contact-hero-clickable .flip-word {
+  cursor: pointer;
+}
+
 .contact-highlight {
   background: linear-gradient(135deg, var(--primary-color), #745cec, #56addd);
   -webkit-background-clip: text;
@@ -444,5 +452,29 @@
 
   .flip-link {
     font-size: clamp(2rem, 8vw, 3rem);
+    padding: 0.5rem 0;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+  }
+
+  .flip-link:active {
+    color: var(--primary-color);
+  }
+
+  .form-field input,
+  .form-field textarea {
+    font-size: 16px;
+    padding: 0.75rem 1rem;
+    min-height: 48px;
+  }
+
+  .submit-btn {
+    min-height: 52px;
+    font-size: 1rem;
+  }
+
+  .contact-overlay {
+    padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px));
   }
 }

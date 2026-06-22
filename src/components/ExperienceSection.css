@@ -1,0 +1,372 @@
+/* Experience Section — Category List Style */
+.exp-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2.5rem;
+}
+
+/* ── Group divider ── */
+.exp-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.75rem 0 1rem;
+}
+
+.exp-divider--first {
+  padding: 0 0 1rem;
+}
+
+.exp-divider__line {
+  flex: 1;
+  height: 1px;
+  background: var(--border-color);
+}
+
+.exp-divider__label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: var(--text-light);
+  white-space: nowrap;
+}
+
+/* ── Card ── */
+.exp-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.exp-card {
+  position: relative;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.exp-card--active {
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 20px rgba(116, 92, 236, 0.12);
+}
+
+/* Corner brackets */
+.exp-card__bracket {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.exp-card--active .exp-card__bracket {
+  opacity: 1;
+}
+
+.exp-card__bracket--tl {
+  top: 10px;
+  left: 10px;
+}
+
+.exp-card__bracket--tl::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 2px;
+  background: var(--primary-color);
+  border-radius: 1px;
+}
+
+.exp-card__bracket--tl::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 14px;
+  background: var(--primary-color);
+  border-radius: 1px;
+}
+
+.exp-card__bracket--br {
+  bottom: 10px;
+  right: 10px;
+}
+
+.exp-card__bracket--br::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 14px;
+  height: 2px;
+  background: var(--primary-color);
+  border-radius: 1px;
+}
+
+.exp-card__bracket--br::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 2px;
+  height: 14px;
+  background: var(--primary-color);
+  border-radius: 1px;
+}
+
+/* ── Header button ── */
+.exp-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1.25rem 1.75rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  color: inherit;
+  gap: 1rem;
+  min-height: 56px;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.2s ease;
+}
+
+.exp-card__header:hover {
+  background: var(--hover-bg);
+}
+
+.exp-card__header:active {
+  background: var(--bg-tertiary);
+}
+
+.exp-card__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.exp-card__title {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+  line-height: 1.35;
+}
+
+.exp-card--active .exp-card__title {
+  color: var(--text-primary);
+}
+
+.exp-card__at {
+  color: var(--text-light);
+  font-weight: 400;
+}
+
+.exp-card__company {
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.exp-card__date {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-top: 0.3rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+/* ── Chevron ── */
+.exp-chevron {
+  color: var(--text-light);
+  transition: transform 0.3s ease, color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.exp-card--open .exp-chevron {
+  transform: rotate(180deg);
+  color: var(--primary-color);
+}
+
+/* ── Detail dropdown (timeline) ── */
+.exp-card__detail {
+  will-change: height, opacity;
+}
+
+.exp-card__detail-inner {
+  padding: 0 1.75rem 1.5rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1.25rem;
+}
+
+.exp-card__timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.exp-card__timeline::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 5px;
+  width: 1.5px;
+  background: var(--border-color);
+  border-radius: 1px;
+}
+
+.exp-card__timeline-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding-bottom: 1rem;
+}
+
+.exp-card__timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.exp-card__timeline-dot {
+  position: relative;
+  flex-shrink: 0;
+  width: 11px;
+  height: 11px;
+  margin-top: 5px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  box-shadow: 0 0 0 3px var(--bg-primary);
+  z-index: 1;
+}
+
+.exp-card__timeline-text {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 1024px) {
+  .exp-card__header {
+    padding: 1.1rem 1.5rem;
+  }
+
+  .exp-card__detail-inner {
+    padding: 0 1.5rem 1.25rem;
+    padding-top: 1.1rem;
+  }
+
+  .exp-card__title {
+    font-size: 1.45rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .exp-list {
+    margin-top: 2rem;
+  }
+
+  .exp-group {
+    gap: 0.5rem;
+  }
+
+  .exp-divider {
+    padding: 1.5rem 0 0.75rem;
+  }
+
+  .exp-divider--first {
+    padding: 0 0 0.75rem;
+  }
+
+  .exp-card__header {
+    padding: 1rem 1.25rem;
+    min-height: 52px;
+  }
+
+  .exp-card__title {
+    font-size: 1.3rem;
+  }
+
+  .exp-card__date {
+    font-size: 0.8rem;
+  }
+
+  .exp-card__detail-inner {
+    padding: 0 1.25rem 1.25rem;
+    padding-top: 1rem;
+  }
+
+  .exp-card__timeline-text {
+    font-size: 0.95rem;
+  }
+
+  .exp-card__bracket--tl {
+    top: 8px;
+    left: 8px;
+  }
+
+  .exp-card__bracket--br {
+    bottom: 8px;
+    right: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .exp-list {
+    margin-top: 1.5rem;
+  }
+
+  .exp-card {
+    border-radius: 10px;
+  }
+
+  .exp-card__header {
+    padding: 0.875rem 1rem;
+  }
+
+  .exp-card__title {
+    font-size: 1.2rem;
+  }
+
+  .exp-card__date {
+    font-size: 0.75rem;
+  }
+
+  .exp-chevron {
+    width: 18px;
+    height: 18px;
+  }
+
+  .exp-card__detail-inner {
+    padding: 0 1rem 1rem;
+    padding-top: 0.875rem;
+  }
+
+  .exp-card__timeline-text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .exp-card__timeline::before {
+    left: 4px;
+  }
+
+  .exp-card__timeline-dot {
+    width: 9px;
+    height: 9px;
+    margin-top: 4px;
+  }
+}

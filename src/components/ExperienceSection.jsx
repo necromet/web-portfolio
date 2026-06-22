@@ -1,12 +1,13 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import './ExperienceSection.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const experienceGroups = [
   {
-    label: 'Official',
+    label: 'Formal',
     items: {
       'Sinarmas Multiartha': {
         role: 'Data Scientist',
@@ -35,7 +36,7 @@ const experienceGroups = [
     label: 'Freelance',
     items: {
       'Traffic Simulation': {
-        role: 'Algorithm Developer',
+        role: 'Simulation Engineer',
         company: 'Freelance',
         date: '2026',
         points: [
@@ -93,79 +94,129 @@ const experienceGroups = [
   }
 ];
 
-const allExperiences = experienceGroups.reduce((acc, group) => ({ ...acc, ...group.items }), {});
-const defaultCompany = 'Sinarmas Multiartha';
+function ChevronIcon() {
+  return (
+    <svg
+      className="exp-chevron"
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <polyline points="6 9 12 15 18 9" />
+    </svg>
+  );
+}
 
-/**
- * Experience Section Component
- * Displays professional work history with interactive company selection
- */
-function ExperienceSection() {
-  const [activeCompany, setActiveCompany] = useState(defaultCompany);
-  const currentExp = allExperiences[activeCompany];
+function ExperienceCard({ item, isOpen, onToggle, hoveredId, onHover }) {
+  const detailRef = useRef(null);
   const contentRef = useRef(null);
-  const companyListRef = useRef(null);
+
+  useEffect(() => {
+    if (!detailRef.current || !contentRef.current) return;
+    const content = contentRef.current;
+
+    if (isOpen) {
+      const height = content.scrollHeight;
+      gsap.fromTo(
+        detailRef.current,
+        { height: 0, opacity: 0 },
+        { height, opacity: 1, duration: 0.4, ease: 'power2.out', onComplete: () => {
+          detailRef.current.style.height = 'auto';
+        }}
+      );
+    } else {
+      const currentHeight = detailRef.current.offsetHeight;
+      gsap.fromTo(
+        detailRef.current,
+        { height: currentHeight, opacity: 1 },
+        { height: 0, opacity: 0, duration: 0.3, ease: 'power2.inOut' }
+      );
+    }
+  }, [isOpen]);
+
+  const isHovered = hoveredId === item.id;
+
+  return (
+    <div
+      className={`exp-card ${isHovered || isOpen ? 'exp-card--active' : ''} ${isOpen ? 'exp-card--open' : ''}`}
+      onMouseEnter={() => onHover(item.id)}
+      onMouseLeave={() => onHover(null)}
+    >
+      <div className="exp-card__bracket exp-card__bracket--tl" />
+      <div className="exp-card__bracket exp-card__bracket--br" />
+
+      <button
+        className="exp-card__header"
+        onClick={onToggle}
+        aria-expanded={isOpen}
+      >
+        <div className="exp-card__info">
+          <h3 className="exp-card__title">
+            {item.role} <span className="exp-card__at">@</span> <span className="exp-card__company">{item.company}</span>
+          </h3>
+          {item.date && (
+            <p className="exp-card__date">{item.date}</p>
+          )}
+        </div>
+        <ChevronIcon />
+      </button>
+
+      <div
+        ref={detailRef}
+        className="exp-card__detail"
+        style={{ height: 0, opacity: 0, overflow: 'hidden' }}
+      >
+        <div ref={contentRef} className="exp-card__detail-inner">
+          <ul className="exp-card__timeline">
+            {item.points.map((text, i) => (
+              <li key={i} className="exp-card__timeline-item">
+                <span className="exp-card__timeline-dot" />
+                <span className="exp-card__timeline-text">{text}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ExperienceSection() {
+  const [openId, setOpenId] = useState(null);
+  const [hoveredId, setHoveredId] = useState(null);
   const sectionRef = useRef(null);
 
-  // Scroll-triggered animation on mount
+  const handleToggle = (id) => {
+    setOpenId((prev) => (prev === id ? null : id));
+  };
+
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Animate company list items when scrolled into view
-      gsap.fromTo('.company-group-list li', 
-        {
-          opacity: 0,
-          x: -30
-        },
+      gsap.fromTo(
+        '.exp-card, .exp-divider',
+        { opacity: 0, y: 20 },
         {
           opacity: 1,
-          x: 0,
-          duration: 0.3,
-          stagger: 0.1,
+          y: 0,
+          duration: 0.4,
+          stagger: 0.06,
           ease: 'power2.out',
           scrollTrigger: {
             trigger: sectionRef.current,
             start: 'top 80%',
-            toggleActions: 'play none none none'
-          }
+            toggleActions: 'play none none none',
+          },
         }
       );
-
-      // Animate initial content when scrolled into view
-      gsap.from('.experience-content', {
-        opacity: 0,
-        y: 20,
-        duration: 0.6,
-        delay: 0.3,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 80%',
-          toggleActions: 'play none none none'
-        }
-      });
     }, sectionRef);
 
     return () => ctx.revert();
   }, []);
-
-  // Animate content when company changes
-  useEffect(() => {
-    if (contentRef.current) {
-      gsap.fromTo(
-        contentRef.current,
-        {
-          opacity: 0,
-          y: 20
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.5,
-          ease: 'power2.out'
-        }
-      );
-    }
-  }, [activeCompany]);
 
   return (
     <section id="experience" className="experience" ref={sectionRef}>
@@ -173,40 +224,34 @@ function ExperienceSection() {
         <h1 className="hero-title" align="left">
           <span className="highlight">#</span> experience
         </h1>
-        <div className="experience-container" ref={companyListRef}>
-          {/* LEFT - Company List */}
-          <ul className="company-list">
-            {experienceGroups.map((group) => (
-              <li key={group.label} className="company-group">
-                <span className="company-group-label">{group.label}</span>
-                <ul className="company-group-list">
-                  {Object.keys(group.items).map((company) => (
-                    <li
-                      key={company}
-                      className={activeCompany === company ? 'active' : ''}
-                      onClick={() => setActiveCompany(company)}
-                    >
-                      {company.toUpperCase()}
-                    </li>
-                  ))}
-                </ul>
-              </li>
-            ))}
-          </ul>
-
-          {/* RIGHT - Experience Details */}
-          <div className="experience-content" ref={contentRef}>
-            <h3 className="exp-role">
-              {currentExp.role} <span className="exp-company">@ {currentExp.company}</span>
-            </h3>
-            <p className="exp-date">{currentExp.date}</p>
-
-            <ul className="exp-points">
-              {currentExp.points.map((text, i) => (
-                <li key={i}>{text}</li>
+        <div className="exp-list">
+          {experienceGroups.map((group, gi) => (
+            <div key={group.label} className="exp-group">
+              {gi > 0 && (
+                <div className="exp-divider">
+                  <span className="exp-divider__line" />
+                  <span className="exp-divider__label">{group.label}</span>
+                  <span className="exp-divider__line" />
+                </div>
+              )}
+              {gi === 0 && (
+                <div className="exp-divider exp-divider--first">
+                  <span className="exp-divider__label">{group.label}</span>
+                  <span className="exp-divider__line" />
+                </div>
+              )}
+              {Object.entries(group.items).map(([key, item]) => (
+                <ExperienceCard
+                  key={key}
+                  item={{ id: key, ...item }}
+                  isOpen={openId === key}
+                  onToggle={() => handleToggle(key)}
+                  hoveredId={hoveredId}
+                  onHover={setHoveredId}
+                />
               ))}
-            </ul>
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

@@ -77,7 +77,10 @@ function Contact() {
     <div className="contact-page">
       <div className="contact-overlay">
         <div className="contact-hero">
-          <h1 className="contact-hero-title">
+          <h1
+            className="contact-hero-title contact-hero-clickable"
+            onClick={() => document.getElementById('connect-links')?.scrollIntoView({ behavior: 'smooth' })}
+          >
             <FlipWord>LET&apos;S</FlipWord>{" "}
             <FlipWord className="contact-highlight">CONNECT</FlipWord>
           </h1>
@@ -191,7 +194,7 @@ function Contact() {
           </div>
         </div>
 
-        <div className="flip-links-section">
+        <div className="flip-links-section" id="connect-links">
           <h2 className="flip-links-title">Connect</h2>
           <div className="flip-links-grid">
             {socialLinks.map((link) => (

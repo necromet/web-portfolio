@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import Navigation from './components/Navigation';
+import MobileBottomNav from './components/MobileBottomNav';
+import ScrollToTop from './components/ScrollToTop';
 import Home from './sections/Home';
 import Contact from './sections/Contact';
 import './App.css';
@@ -20,6 +22,8 @@ function AppContent() {
           <p>&copy; 2026 Edward Renaldi. All rights reserved.</p>
         </div>
       </footer>
+      <MobileBottomNav />
+      <ScrollToTop />
     </div>
   );
 }

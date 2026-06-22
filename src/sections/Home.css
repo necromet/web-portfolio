@@ -161,7 +161,7 @@
 
 /* Experience Section */
 .experience {
-  min-height: calc(100vh - 80px);
+  min-height: auto;
   display: flex;
   align-items: stretch;
   justify-content: center;
@@ -171,119 +171,6 @@
 .experience-wrapper {
   max-width: 900px;
   width: 100%;
-}
-
-.experience-container {
-  display: flex;
-  gap: 3rem;
-  margin-top: 3rem;
-}
-
-.company-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  /* border-left: 2px solid var(--text-secondary); */
-  min-width: 180px;
-}
-
-.company-group {
-  list-style: none;
-}
-
-.company-group-label {
-  display: block;
-  padding: 0.5rem 1.5rem;
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: var(--text-light);
-  opacity: 0.7;
-  pointer-events: none;
-}
-
-.company-group-label:not(:first-child) {
-  margin-top: 0.75rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--border-color);
-}
-
-.company-group-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.company-group-list li {
-  padding: 0.75rem 1.5rem;
-  cursor: pointer;
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  border-right: 2px solid transparent;
-  margin-left: -2px;
-  white-space: nowrap;
-}
-
-.company-group-list li:hover {
-  background: rgba(116, 92, 236, 0.05);
-  color: var(--primary-color);
-}
-
-.company-group-list li.active {
-  color: var(--primary-color);
-  background: rgba(116, 92, 236, 0.1);
-  border-right: 2px solid var(--primary-color);
-}
-
-.experience-content {
-  flex: 1;
-}
-
-.exp-role {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 0.5rem;
-}
-
-.exp-company {
-  color: var(--primary-color);
-  font-weight: 500;
-}
-
-.exp-date {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  margin-bottom: 1.5rem;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-}
-
-.exp-points {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.exp-points li {
-  position: relative;
-  padding-left: 1.5rem;
-  margin-bottom: 1rem;
-  color: var(--text-secondary);
-  line-height: 1.7;
-  font-size: 1rem;
-}
-
-.exp-points li::before {
-  content: '▹';
-  position: absolute;
-  left: 0;
-  color: var(--primary-color);
-  font-size: 1.2rem;
-  line-height: 1.5;
 }
 
 /* Projects Section */
@@ -415,10 +302,10 @@
   }
 
   .hero-image {
-    max-width: 300px;
+    max-width: 220px;
   }
   .hero-image-about-section {
-    max-width: 300px;
+    max-width: 220px;
   }
 
   .hero-title {
@@ -451,42 +338,8 @@
     font-size: 2.5rem;
   }
 
-  .experience-container {
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  .company-list {
-    display: flex;
-    overflow-x: auto;
-    border-left: none;
-    border-bottom: 2px solid var(--text-secondary);
-    min-width: auto;
-  }
-
-  .company-group {
-    display: contents;
-  }
-
-  .company-group-label {
-    display: none;
-  }
-
-  .company-group-list {
-    display: flex;
-  }
-
-  .company-group-list li {
-    border-left: none;
-    border-bottom: 2px solid transparent;
-    margin-left: 0;
-    margin-bottom: -2px;
-    padding: 0.75rem 1rem;
-  }
-
-  .company-group-list li.active {
-    border-left: none;
-    border-bottom: 2px solid var(--primary-color);
+  .experience {
+    padding: 80px 1.5rem 3rem;
   }
 }
 
@@ -502,7 +355,7 @@
   .hero-image {
     flex: 0 0 auto;
     padding-top: 50px;
-    max-width: 250px;
+    max-width: 180px;
     width: 100%;
     animation: fadeInLeft 0.8s ease-out;
   }
@@ -585,14 +438,17 @@
   .experience {
     padding: 60px 1.5rem 3rem;
   }
-
-  .exp-role {
-    font-size: 1.25rem;
-  }
-
-  .exp-points li {
-    font-size: 0.95rem;
-  }
 }
 /* Add transitions for dark mode */
 .hero, .stats, .stat-card, .skills-preview, .skill-item { transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; }
+
+@media (max-width: 768px) {
+  .project-card {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .project-card:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+}

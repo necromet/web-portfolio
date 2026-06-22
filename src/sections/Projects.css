@@ -226,3 +226,19 @@
 }
 /* Dark mode transitions */
 .projects-page, .projects-hero, .project-card, .project-content { transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; }
+
+@media (max-width: 768px) {
+  .project-link {
+    min-height: 44px;
+    padding: 0.625rem 1rem;
+  }
+
+  .project-link:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+
+  .project-link.secondary:active {
+    background: var(--bg-secondary);
+  }
+}

@@ -48,3 +48,10 @@ html {
   outline: 2px solid var(--primary-color);
   outline-offset: 2px;
 }
+
+/* Mobile bottom nav spacing */
+@media (max-width: 768px) {
+  .footer {
+    padding-bottom: calc(4.5rem + env(safe-area-inset-bottom, 0px));
+  }
+}
