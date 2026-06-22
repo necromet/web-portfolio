@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const experienceGroups = [
   {
-    label: 'Formal',
+    label: 'Full Time',
     items: {
       'Sinarmas Multiartha': {
         role: 'Data Scientist',
